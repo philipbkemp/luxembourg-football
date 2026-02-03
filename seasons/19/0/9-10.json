@@ -1,0 +1,23 @@
+{
+    "season": [1909,1910],
+    "league": [{
+        "level": 1,
+        "name": "Klasse A",
+        "standings": [
+            {"team": "RACL", "missing": true, "playoff": "title", "champion": true},
+            {"team": "HLBN", "missing": true, "playoff": "title"},
+            {"team": "SCLX", "missing": true},
+            {"team": "JESH", "missing": true},
+            {"team": "URUM", "missing": true},
+            {"team": "JECT", "missing": true},
+            {"team": "CROD", "missing": true},
+            {"team": "NESH", "missing": true},
+            {"team": "GDUD", "missing": true}
+        ]
+    }],
+    "playoffs": {
+        "title": [
+            {"date": "1910-05-06", "home":"RACL", "away":"HLBN", "score":"3-2", "outcome": "RACL champions"}
+        ]
+    }
+}
