@@ -1,0 +1,79 @@
+{
+    "season": [1914,1915],
+    "league": [{
+        "level": 1,
+        "name": "1. Division",
+        "series": [{
+            "name": "Series 1",
+            "pts_win": 2,
+            "standings": [
+                {"team": "SCLX", "w": 3, "d":  0, "l": 1, "f": 10, "a":  8, "playoff": "playoff"},
+                {"team": "RACL", "w": 2, "d":  1, "l": 1, "f": 13, "a": 10},
+                {"team": "HLBN", "w": 0, "d":  1, "l": 3, "f":  3, "a":  8, "playoff": "playoff","champion":true}
+            ],
+            "matches": [
+                {"home":"SCLX","away":"RACL","score":"6-5"},
+                {"home":"RACL","away":"HLBN","score":"4-2"},
+                {"home":"HLBN","away":"SCLX","score":"0-2"},
+                {"home":"RACL","away":"SCLX","score":"3-1"},
+                {"home":"HLBN","away":"RACL","score":"1-1"},
+                {"home":"SCLX","away":"HLBN","score":"1-0"}
+            ]
+        },{
+            "name": "Series 2",
+            "pts_win": 2,
+            "standings": [
+                {"team": "JESH", "w": 1, "d":  1, "l": 0, "f": 5, "a": 4, "playoff": "playoff"},
+                {"team": "FOLA", "w": 0, "d":  1, "l": 1, "f": 4, "a": 5}
+            ],
+            "matches": [
+                {"home":"JESH","away":"FOLA","score":"3-2"},
+                {"home":"FOLA","away":"JESH","score":"2-2"}
+            ]
+        },{
+            "name": "Series 3",
+            "pts_win": 2,
+            "standings": [
+                {"team": "SDUD", "w": 2, "d": 0, "l": 0, "f": 12, "a":  2,"playoff": "playoff"},
+                {"team": "USDD", "w": 0, "d": 0, "l": 2, "f":  2, "a": 12}
+            ],
+            "matches": [
+                {"home":"SDUD","away":"USDD","score":"6-1"},
+                {"home":"USDD","away":"SDUD","score":"1-6"}
+            ]
+        },{
+            "name": "Series 4",
+            "pts_win": 2,            
+            "standings": [
+                {"team": "CPET", "w": 2, "d": 0, "l": 0, "f": 6, "a": 4,"playoff": "playoff"},
+                {"team": "SDIF", "w": 0, "d": 0, "l": 2, "f": 4, "a": 6}
+            ],
+            "matches": [
+                {"home":"CPET","away":"SDIF","score":"4-3"},
+                {"home":"SDIF","away":"CPET","score":"1-2"}
+            ]
+        },{
+            "name": "Series 5",
+            "pts_win": 2,
+            "standings": [
+                {"team": "YBDK", "w": 2, "d": 0, "l": 0, "f": 10, "a":  0,"playoff": "playoff"},
+                {"team": "CECH", "w": 0, "d": 0, "l": 2, "f":  0, "a": 10}
+            ],
+            "matches": [
+                {"home":"YBDK","away":"CECH","score":"7-0"},
+                {"home":"CECH","away":"YBDK","score":"0-3"}
+            ]
+        }]
+    }],
+    "playoffs": {        
+        "playoff": [
+            {"home":"JESH","homeDivision":{"level":1,"series":2,"name":"1. Division Series 2"},"away":"SDUD","awayDivision":{"level":1,"series":3,"name":"1. Division Series 3"},"score":"4-1"},
+            {"home":"JESH","homeDivision":{"level":1,"series":2,"name":"1. Division Series 2"},"away":"CPET","awayDivision":{"level":1,"series":4,"name":"1. Division Series 4"},"score":"4-0","outcome":"JESH qualify for TARGET"},
+            {"home":"SCLX","homeDivision":{"level":1,"series":1,"name":"1. Division Series 1"},"away":"YBDK","awayDivision":{"level":1,"series":5,"name":"1. Division Series 5"},"score":"4-1","outcome":"SCLX disqualified for fielding ineligible player during Series 1 matches"},
+            {"home":"HLBN","homeDivision":{"level":1,"series":1,"name":"1. Division Series 1"},"away":"YBDK","awayDivision":{"level":1,"series":5,"name":"1. Division Series 5"},"score":"3-0","forfeit":true,"outcome":"HLBN qualify for TARGET"}
+        ],
+        "title": [
+            {"home":"HLBN","homeDivision":{"level":1,"series":1,"name":"1. Division Series 1"},"away":"JESH","awayDivision":{"level":1,"series":2,"name":"1. Division Series 2"},"score":"8-1","outcome": "HLBN champions"}
+        ]
+    }
+}
