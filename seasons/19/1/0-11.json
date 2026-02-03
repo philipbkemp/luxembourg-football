@@ -1,0 +1,33 @@
+{
+    "season": [1910,1911],
+    "league": [{
+        "level": 1,
+        "name": "Klasse A",
+        "pts_win": 2,
+        "standings": [
+            {"team": "SCLX", "w": 4, "d":  1, "l": 1, "f": 15, "a":  6, "playoff": "title", "champion": true},
+            {"team": "SDIF", "w": 4, "d":  1, "l": 1, "f":  8, "a":  6, "playoff": "title"},
+            {"team": "HLBN", "w": 2, "d":  2, "l": 2, "f": 10, "a":  7},
+            {"team": "MANC", "w": 0, "d":  0, "l": 6, "f":  1, "a": 15}
+        ],
+        "matches": [            
+            {"home":"SCLX","away":"SDIF","score":"3-1"},
+            {"home":"SCLX","away":"HLBN","score":"3-1"},
+            {"home":"SCLX","away":"MANC","score":"4-0"},
+            {"home":"SDIF","away":"SCLX","score":"2-1"},
+            {"home":"SDIF","away":"HLBN","score":"1-0"},
+            {"home":"SDIF","away":"MANC","score":"2-1"},
+            {"home":"HLBN","away":"SCLX","score":"2-2"},
+            {"home":"HLBN","away":"SDIF","score":"1-1"},
+            {"home":"HLBN","away":"MANC","score":"3-0"},
+            {"home":"MANC","away":"SCLX","score":"0-2"},
+            {"home":"MANC","away":"SDIF","score":"0-1"},
+            {"home":"MANC","away":"HLBN","score":"0-3"}
+        ]
+    }],
+    "playoffs": {
+        "title": [
+            {"date": "1911-04-09","home":"SCLX","away":"SDIF","score":"3-0", "outcome": "SCLX champions"}
+        ]
+    }
+}
