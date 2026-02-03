@@ -1,0 +1,15 @@
+{
+    "season": [1913,1914],
+    "league": [{
+        "level": 1,
+        "name": "1. Division",
+        "standings": [
+            {"team": "HLBN", "missing": true, "champion": true},
+            {"team": "SCLX", "missing": true},
+            {"team": "RACL", "missing": true},
+            {"team": "SDIF", "missing": true},
+            {"team": "JESH", "missing": true},
+            {"team": "CPET", "missing": true}
+        ]
+    }]
+}
