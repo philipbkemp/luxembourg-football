@@ -65,7 +65,7 @@
             ]
         }]
     }],
-    "playoffs": {        
+    "playoffs": {
         "playoff": [
             {"home":"JESH","homeDivision":{"level":1,"series":2,"name":"1. Division Series 2"},"away":"SDUD","awayDivision":{"level":1,"series":3,"name":"1. Division Series 3"},"score":"4-1"},
             {"home":"JESH","homeDivision":{"level":1,"series":2,"name":"1. Division Series 2"},"away":"CPET","awayDivision":{"level":1,"series":4,"name":"1. Division Series 4"},"score":"4-0","outcome":"JESH qualify for TARGET"},
