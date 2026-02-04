@@ -13,7 +13,8 @@
             {"team": "CROD", "missing": true},
             {"team": "NESH", "missing": true},
             {"team": "GDUD", "missing": true}
-        ]
+        ],
+        "note": "Full data not available"
     }],
     "playoffs": {
         "title": [
