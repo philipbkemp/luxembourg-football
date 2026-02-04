@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LuxFoot | Seasons</title>
+    </head>
+    <body>
+        <h1>Luxembourgish Football: Seasons</h1>
+        <ul id="seasonlist">
+
+        </ul>
+        <script>
+            fetch("data/seasons.json")
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                });
+        </script>
+    </body>
+</html>
