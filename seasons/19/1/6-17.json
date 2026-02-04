@@ -62,7 +62,7 @@
             "name": "Series Luxembourg",
             "pts_win": 2,
             "standings": [  
-                {"team": "AVBG", "w": 6, "d": 0, "l": 0, "f": 51, "a":  5, "playoff":"promotion"},
+                {"team": "AVBG", "w": 6, "d": 0, "l": 0, "f": 51, "a":  5, "playoff":"promotion_3"},
                 {"team": "JWMK", "w": 3, "d": 0, "l": 3, "f": 16, "a": 19},
                 {"team": "WALF", "w": 2, "d": 0, "l": 4, "f":  4, "a": 39},
                 {"team": "ROLG", "w": 1, "d": 0, "l": 5, "f": 10, "a": 18}
@@ -71,7 +71,7 @@
             "name": "Series Esch",
             "pts_win": 2,
             "standings": [
-                {"team": "URUM", "w": 5, "d": 1, "l": 0, "f": 20, "a":  7, "playoff":"promotion", "promoted":true},
+                {"team": "URUM", "w": 5, "d": 1, "l": 0, "f": 20, "a":  7, "playoff":"promotion_3", "promoted":true},
                 {"team": "NSCH", "w": 3, "d": 2, "l": 1, "f": 20, "a": 16},
                 {"team": "STET", "w": 1, "d": 1, "l": 4, "f":  9, "a": 18},
                 {"team": "BLVL", "w": 1, "d": 0, "l": 5, "f": 15, "a": 23,"removed":true,"note":"Did not compete next season"}
@@ -79,7 +79,7 @@
         }]
     }],
     "playoffs": {
-        "promotion": [
+        "promotion_3": [
             {"home":"URUM","away":"AVBG","score":"6-2","outcome":"URUM promoted"}
         ]
     }
