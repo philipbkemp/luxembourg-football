@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>LuxFoot | Clubs</title>
+        <link href="styles.css" rel="stylesheet" />
     </head>
     <body>
         <h1>Luxembourgish Football: Clubs</h1>
@@ -9,7 +10,7 @@
 
         </ul>
         <script>
-            fetch("data/clubs.json")
+            fetch("data/teams.json")
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);

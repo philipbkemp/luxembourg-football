@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>LuxFoot | Seasons</title>
+        <link href="styles.css" rel="stylesheet" />
     </head>
     <body>
         <h1>Luxembourgish Football: Seasons</h1>
@@ -12,7 +13,15 @@
             fetch("data/seasons.json")
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
+                    ul = document.getElementById("seasonlist");
+                    data.forEach(s=>{
+                        li = document.createElement("LI");
+                        link = document.createElement("A");
+                        link.href = "season.html?y="+s;
+                        link.textContent = s;
+                        li.append(link);
+                        ul.append(li);
+                    });
                 });
         </script>
     </body>
