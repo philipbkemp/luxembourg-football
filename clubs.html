@@ -6,14 +6,53 @@
     </head>
     <body>
         <h1>Luxembourgish Football: Clubs</h1>
-        <ul id="seasonlist">
+        <ul id="clubslist">
 
         </ul>
         <script>
+            levelNames = {
+                "1": "National Division",
+                "2": "Division of Honour",
+                "3": "1. Division",
+                "4": "2. Division",
+                "5": "3. Division",
+                "defunct": "Defunct"
+            }
             fetch("data/teams.json")
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
+                    levels = {
+                        "1": [],
+                        "2": [],
+                        "3": [],
+                        "4": [],
+                        "5": [],
+                        "defunct": []
+                    }
+                    Object.entries(data).forEach(c=>{
+                        club = c[1];
+                        if ( ! club.level ) {
+                            club.level = "defunct";
+                        }
+                        thisClub = club;
+                        thisClub.code = c[0];
+                        levels[club.level].push(thisClub);
+                    });
+                    ul = document.getElementById("clublist");
+                    ["1","2","3","4","5","defunct"].forEach(l=>{
+                        levelLi = document.createElement("LI");
+                        levelLi.textContent = levelNames[l];
+                        liul = document.createElement("UL");
+                        levels[l].forEach(c=>{
+                            li = document.createElement("LI");
+                            link = document.createElement("A");
+                            link.href = "club.html?y="+c.name;
+                            link.textContent = c.code;
+                            li.append(link);
+                            liul.append(li);
+                        });
+                        ul.append(levelLi);
+                    });
                 });
         </script>
     </body>
