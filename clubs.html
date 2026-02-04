@@ -6,6 +6,7 @@
     </head>
     <body>
         <h1>Luxembourgish Football: Clubs</h1>
+        <a href="index.html">Home</a>
         <ul id="clubslist">
 
         </ul>
@@ -38,7 +39,7 @@
                         thisClub.code = c[0];
                         levels[club.level].push(thisClub);
                     });
-                    ul = document.getElementById("clublist");
+                    ul = document.getElementById("clubslist");
                     ["1","2","3","4","5","defunct"].forEach(l=>{
                         levelLi = document.createElement("LI");
                         levelLi.textContent = levelNames[l];
