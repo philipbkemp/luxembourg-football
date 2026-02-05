@@ -198,7 +198,7 @@
                 td_score = document.createElement("TD");
                 td_score.textContent = matchData.score;
                 if ( matchData.forfeit ) {
-                    td_score.append("<br />");
+                    td_score.appendChild("<br />");
                     td_score.append("Forfeit");
                     dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.forfeit'));
                 }
