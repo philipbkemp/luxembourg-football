@@ -41,7 +41,6 @@
                 });
             
             function drawStandings(standingsData) {
-                console.log(standingsData);
                 table = document.createElement("TABLE");
                 
                 thead = document.createElement("THEAD");
@@ -50,6 +49,10 @@
                 th_place = document.createElement("TH");
                 th_place.textContent = "#";
                 thead_tr.append(th_place);
+
+                th_team = document.createElement("TH");
+                th_team.textContent = "Team";
+                thead_tr.append(th_team);
 
                 thead.append(thead_tr);
                 table.append(thead);
@@ -62,6 +65,10 @@
                     tr_place = document.createElement("TD");
                     tr_place.textContent = row.place;
                     tbody_tr.append(tr_place);
+
+                    tr_team = document.createElement("TD");
+                    tr_team.textContent = row.team;
+                    tbody_tr.append(tr_team);
 
                     tbody.append(tbody_tr);
                 });
