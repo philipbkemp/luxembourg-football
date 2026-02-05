@@ -72,12 +72,18 @@
                             h2.id = "league_" + league.level;
                             document.body.append(h2);
 
-                            // note
                             if ( league.note ) {
                                 dataKeys = dataKeys.filter(key => key !== 'league.note');
                                 note = document.createElement("P");
                                 note.textContent = "Note: " + league.note;
                                 document.body.append(note);
+                            }
+
+                            if ( league.pts_win ) {
+                                dataKeys = dataKeys.filter(key => key !== 'league.pts_win');
+                                ptswin = document.createElement("P");
+                                ptswin.textContent = "Points for a win: " + league.pts_win;
+                                document.body.append(ptswin);
                             }
 
                             if ( league.standings ) {
