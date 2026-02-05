@@ -31,4 +31,12 @@ abbr {
     cursor: help;
     text-underline-offset: 3px;
 }
-tr.is-champion { background: #aad9f5; }
+tr.is-champion {
+    background: #aad9f5;
+}
+table tbody tr td.match-home {
+    text-align: right;
+}
+table tbody tr td.match-score {
+    width: 75px;
+}
