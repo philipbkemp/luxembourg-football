@@ -35,12 +35,12 @@
                         document.body.append(h2);
 
                         if ( league.standings ) {
-                            drawStandings(league.standings);
+                            drawStandings(league.standings,league.pts_win??3);
                         }
                     });
                 });
             
-            function drawStandings(standingsData) {
+            function drawStandings(standingsData,pts=3) {
                 table = document.createElement("TABLE");
                 
                 thead = document.createElement("THEAD");
@@ -54,10 +54,29 @@
                 th_team.textContent = "Team";
                 thead_tr.append(th_team);
 
+                stats = [
+                    ["P","Played"],
+                    ["W","Won"],
+                    ["D","Draw"],
+                    ["L","Lost"],
+                    ["F","Goals For"],
+                    ["A","Goals Against"],
+                    ["Pts","Points"],
+                    ["GD","Goal Difference"]
+                ];
+                stats.forEach(s=>{
+                    th_stat = document.createElement("TH");
+                    th_stat_abbr = document.createElement("ABBR");
+                    th_stat_abbr.textContent = s[0];
+                    th_stat_abbr.title = s[1];
+                    th_stat.append(th_stat_abbr);
+                    thead_tr.append(th_stat);
+                });
+
                 thead.append(thead_tr);
                 table.append(thead);
 
-                tbody = document.createElement("TBODY");                
+                tbody = document.createElement("TBODY");
                 
                 standingsData.forEach(row=>{
                     tbody_tr = document.createElement("TR");
@@ -69,6 +88,20 @@
                     tr_team = document.createElement("TD");
                     tr_team.textContent = row.team;
                     tbody_tr.append(tr_team);
+
+                    stats = ["p","w","d","l","f","a"];
+                    stats.forEach(s=>{
+                        td_stat = document.createElement("TH");
+                        td_stat.textContent = row[s];
+                        tbody_tr.append(td_stat);
+                    });
+                    td_stat = document.createElement("TH");
+                    td_stat.textContent = row.f - row.a;
+                    tbody_tr.append(td_stat);
+
+                    td_stat = document.createElement("TH");
+                    td_stat.textContent = (row.w*pts) + row.d;
+                    tbody_tr.append(td_stat);
 
                     tbody.append(tbody_tr);
                 });
