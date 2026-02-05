@@ -140,6 +140,7 @@
                         td_stat.textContent = (row.w*row.pts) + row.d;
                         tbody_tr.append(td_stat);
                     } else {
+                        dataKeys = dataKeys.filter(key => key !== 'league.standings.missing');
                         td_stats = document.createElement("TD");
                         td_stats.textContent = "Missing data";
                         td_stats.setAttribute("colspan",8);
