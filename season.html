@@ -73,12 +73,54 @@
                             h2.textContent = "Playoff: " + playoffNames(poName);
                             h2.id = "playoff_" + poName;
                             document.body.append(h2);
+
+                            if ( poData.matches ) {
+                                dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.matches'));
+                                matchTable = document.createElement("TABLE");
+                                poData.matches.forEach(match=>{
+                                    matchTable.append( drawMatch(match) );
+                                });
+                                document.body.append(matchTable);
+                            }
                         });
                     }
 
                     console.log(dataKeys);
                 });
             
+            function drawMatch(matchData) {
+                match_tr = document.createElement("TR");
+
+                td_date = document.createElement("TD");
+                td_date.textContent = matchData.date;
+                td_date.classList.add("match-date");
+                tbody_tr.append(td_date);
+
+                td_home = document.createElement("TD");
+                td_home.textContent = allTeams[matchData.home].name;
+                td_home.classList.add("team-name");
+                td_home.classList.add("match-home");
+                tbody_tr.append(td_home);
+
+                td_score = document.createElement("TD");
+                td_score.textContent = matchData.score;
+                td_score.classList.add("match-score");
+                tbody_tr.append(td_score);
+
+                td_away = document.createElement("TD");
+                td_away.textContent = allTeams[matchData.away].name;
+                td_away.classList.add("team-name");
+                td_away.classList.add("match-away");
+                tbody_tr.append(td_away);
+
+                td_outcome = document.createElement("TD");
+                td_outcome.textContent = matchData.outcome;
+                td_outcome.classList.add("team-notes");
+                tbody_tr.append(td_outcome);
+
+                return match_tr;
+            }
+
             function playoffNames(poName) {
                 switch( poName ) {
                     case "title":
