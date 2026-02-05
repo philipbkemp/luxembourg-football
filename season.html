@@ -121,6 +121,7 @@
                     tr_team = document.createElement("TD");
                     tr_team.textContent = allTeams[row.team].name;
                     tr_team.classList.add("team-name");
+                    dataKeys = dataKeys.filter(key => key !== 'league.standings.team');
                     tbody_tr.append(tr_team);
 
                     if ( ! row.missing ) {
