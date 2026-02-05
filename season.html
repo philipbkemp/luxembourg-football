@@ -297,6 +297,9 @@
                         matchGrid[m.home] = {};
                     }
                     matchGrid[m.home][m.away] = m.score;
+                    dataKeys = dataKeys.filter(key => key !== ('league.matches.home'));
+                    dataKeys = dataKeys.filter(key => key !== ('league.matches.away'));
+                    dataKeys = dataKeys.filter(key => key !== ('league.matches.score'));
                 });
                 
                 teams = Object.keys(matchGrid).sort();
