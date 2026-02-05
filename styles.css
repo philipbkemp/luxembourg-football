@@ -30,3 +30,4 @@ abbr {
     cursor: help;
     text-underline-offset: 3px;
 }
+tr.is-champion { background: #aad9f5; }

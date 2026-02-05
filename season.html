@@ -40,30 +40,30 @@
                     document.getElementsByTagName("title")[0].textContent += " | " + data.season;
                     document.getElementsByTagName("h1")[0].textContent += " : " + data.season;
 
+                    if ( data.league ) {
+                        dataKeys = dataKeys.filter(key => key !== 'league');
+                        data.league.forEach(league=>{
+                            h2 = document.createElement("H2");
+                            dataKeys = dataKeys.filter(key => key !== 'league.name');
+                            h2.textContent = league.name;
+                            dataKeys = dataKeys.filter(key => key !== 'league.level');
+                            h2.id = "league_" + league.level;
+                            document.body.append(h2);
 
-                    // leagues
-                    dataKeys = dataKeys.filter(key => key !== 'league');
-                    data.league.forEach(league=>{
-                        h2 = document.createElement("H2");
-                        dataKeys = dataKeys.filter(key => key !== 'league.name');
-                        h2.textContent = league.name;
-                        dataKeys = dataKeys.filter(key => key !== 'league.level');
-                        h2.id = "league_" + league.level;
-                        document.body.append(h2);
+                            // note
+                            if ( league.note ) {
+                                dataKeys = dataKeys.filter(key => key !== 'league.note');
+                                note = document.createElement("P");
+                                note.textContent = league.note;
+                                document.body.append(note);
+                            }
 
-                        // note
-                        if ( league.note ) {
-                            dataKeys = dataKeys.filter(key => key !== 'league.note');
-                            note = document.createElement("P");
-                            note.textContent = league.note;
-                            document.body.append(note);
-                        }
-
-                        if ( league.standings ) {
-                            dataKeys = dataKeys.filter(key => key !== 'league.standings');
-                            drawStandings(league.standings);
-                        }
-                    });
+                            if ( league.standings ) {
+                                dataKeys = dataKeys.filter(key => key !== 'league.standings');
+                                drawStandings(league.standings);
+                            }
+                        });
+                    }
 
                     console.log(dataKeys);
                 });
@@ -108,6 +108,11 @@
                 
                 standingsData.forEach(row=>{
                     tbody_tr = document.createElement("TR");
+
+                    if ( row.champion ) {
+                        dataKeys = dataKeys.filter(key => key !== 'league.standings.champion');
+                        tbody_tr.classList.add("is-champion");
+                    }
 
                     tr_place = document.createElement("TD");
                     tr_place.textContent = row.place;
