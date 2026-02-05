@@ -37,6 +37,8 @@
 
                     dataKeys = getAllKeys(data);
 
+                    dataKeys.push("link from standings to playoff");
+
                     document.getElementsByTagName("title")[0].textContent += " | " + data.season;
                     document.getElementsByTagName("h1")[0].textContent += " : " + data.season;
 
