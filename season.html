@@ -14,7 +14,7 @@
             seasonPath = [season[0]+""+season[1],season[2],season[3]+"-"+season.split("-")[1]];
             fetch("seasons/"+seasonPath.join("/")+".json")
                 .then(response => {
-                    if ( ! reponse.ok ) {
+                    if ( ! response.ok ) {
                         throw new Error("Failed to load JSON");
                     }response.json()
                 })
