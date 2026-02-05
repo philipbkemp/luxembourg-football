@@ -13,7 +13,16 @@
             season = params.year;
             seasonPath = [season[0]+""+season[1],season[2],season[3]+"-"+season.split("-")[1]];
             dataKeys = [];
-            fetch("seasons/"+seasonPath.join("/")+".json")
+
+            allTeams = null;
+            fetch("data/teams.json")
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    allTeams = data;
+                    return fetch("seasons/"+seasonPath.join("/")+".json")
+                })
                 .then(response => {
                     if ( ! response.ok ) {
                         console.error(error.message);
@@ -96,7 +105,8 @@
                     tbody_tr.append(tr_place);
 
                     tr_team = document.createElement("TD");
-                    tr_team.textContent = row.team;
+                    tr_team.textContent = allTeams[row.team].name;
+                    tr_team.classList.add("team-name");
                     tbody_tr.append(tr_team);
 
                     if ( ! row.missing ) {
