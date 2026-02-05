@@ -15,11 +15,15 @@
             fetch("seasons/"+seasonPath.join("/")+".json")
                 .then(response => {
                     if ( ! response.ok ) {
-                        throw new Error("Failed to load JSON");
+                        console.error(error.message);
+                        return {"invalid":true};
                     }
                     return response.json()
                 })
                 .then(data => {
+                    if ( data.invalid ) {
+                        return;
+                    }
                     document.getElementsByTagName("title")[0].textContent += " | " + data.season;
                     document.getElementsByTagName("h1")[0].textContent += " : " + data.season;
 
@@ -34,12 +38,10 @@
                             drawStandings(league.standings);
                         }
                     });
-                })
-                .catch(error => {
-                    console.error(error.message);
                 });
             
-            function drawStandings(data) {
+            function drawStandings(standingsData) {
+                console.log(standingsData);
                 table = document.createElement("TABLE");
                 
                 thead = document.createElement("THEAD");
@@ -54,7 +56,7 @@
 
                 tbody = document.createElement("TBODY");                
                 
-                data.forEach(row=>{
+                standingsData.forEach(row=>{
                     tbody_tr = document.createElement("TR");
 
                     tr_place = document.createElement("TD");
