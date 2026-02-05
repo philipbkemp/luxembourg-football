@@ -245,7 +245,7 @@
                     }
 
                     tr_notes = document.createElement("TD");
-                    tr_notes.textContent = rowNotes.join("; ");
+                    tr_notes.innerHTML = rowNotes.join("; ");
                     tr_notes.classList.add("team-notes");
                     tbody_tr.append(tr_notes);
 
