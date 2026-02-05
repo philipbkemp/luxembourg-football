@@ -4,12 +4,12 @@
         "level": 1,
         "name": "1. Division",
         "standings": [
-            {"team": "HLBN", "missing": true, "champion": true},
-            {"team": "SCLX", "missing": true},
-            {"team": "RACL", "missing": true},
-            {"team": "SDIF", "missing": true},
-            {"team": "JESH", "missing": true},
-            {"team": "CPET", "missing": true}
+            {"place":1, "team": "HLBN", "missing": true, "champion": true},
+            {"place":2, "team": "SCLX", "missing": true},
+            {"place":3, "team": "RACL", "missing": true},
+            {"place":4, "team": "SDIF", "missing": true},
+            {"place":5, "team": "JESH", "missing": true},
+            {"place":6, "team": "CPET", "missing": true}
         ]
     }]
 }

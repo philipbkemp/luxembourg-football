@@ -4,15 +4,15 @@
         "level": 1,
         "name": "Klasse A",
         "standings": [
-            {"team": "RACL", "missing": true, "playoff": "title", "champion": true},
-            {"team": "HLBN", "missing": true, "playoff": "title"},
-            {"team": "SCLX", "missing": true},
-            {"team": "JESH", "missing": true},
-            {"team": "URUM", "missing": true},
-            {"team": "JECT", "missing": true},
-            {"team": "CROD", "missing": true},
-            {"team": "NESH", "missing": true},
-            {"team": "GDUD", "missing": true}
+            {"place":1, "team": "RACL", "missing": true, "playoff": "title", "champion": true},
+            {"place":2, "team": "HLBN", "missing": true, "playoff": "title"},
+            {"place":3, "team": "SCLX", "missing": true},
+            {"place":4, "team": "JESH", "missing": true},
+            {"place":5, "team": "URUM", "missing": true},
+            {"place":6, "team": "JECT", "missing": true},
+            {"place":7, "team": "CROD", "missing": true},
+            {"place":8, "team": "NESH", "missing": true},
+            {"place":9, "team": "GDUD", "missing": true}
         ],
         "note": "Full data not available"
     }],

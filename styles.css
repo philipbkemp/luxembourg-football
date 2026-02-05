@@ -4,3 +4,11 @@
 a {
     color: blue !important;
 }
+table {
+    border-collapse: collapse;
+}
+table thead tr th,
+table tbody tr td {
+    border:1px solid black;
+    padding: 5px;
+}

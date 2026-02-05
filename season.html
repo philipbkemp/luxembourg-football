@@ -22,11 +22,51 @@
                 .then(data => {
                     document.getElementsByTagName("title")[0].textContent += " | " + data.season;
                     document.getElementsByTagName("h1")[0].textContent += " : " + data.season;
-                    console.log(data);
+
+                    // leagues
+                    data.leagues.forEach(league=>{
+                        h2 = document.createElement("H2");
+                        h2.textContent = league.name;
+                        h2.id = "league_" + league.level;
+                        document.body.append(h2);
+
+                        if ( league.standings ) {
+                            drawStandings(league.standings);
+                        }
+                    });
                 })
                 .catch(error => {
                     console.error(error.message);
                 });
+            
+            function drawStandings(data) {
+                table = document.createElement("TABLE");
+                
+                thead = document.createElement("THEAD");
+                thead_tr = document.createElement("TR");
+                
+                th_place = document.createElement("TH");
+                th_place.textContent = "#";
+                thead_tr.append(th_place);
+
+                thead.append(thead_tr);
+                table.append(thead);
+
+                tbody = document.createElement("TBODY");                
+                
+                data.forEach(row=>{
+                    tbody_tr = document.createElement("TR");
+
+                    tr_place = document.createElement("TD");
+                    tr_place.textContent = row.place;
+
+                    tbody.append(tbody_tr);
+                });
+
+                table.append(tbody);
+
+                document.body.append(table);
+            }
         </script>
     </body>
 </html>

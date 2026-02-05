@@ -7,9 +7,9 @@
             "name": "Series 1",
             "pts_win": 2,
             "standings": [
-                {"team": "SCLX", "w": 3, "d":  0, "l": 1, "f": 10, "a":  8, "playoff": "title_playoff"},
-                {"team": "RACL", "w": 2, "d":  1, "l": 1, "f": 13, "a": 10},
-                {"team": "HLBN", "w": 0, "d":  1, "l": 3, "f":  3, "a":  8, "playoff": "title_playoff","champion":true}
+                {"place":1, "team": "SCLX", "w": 3, "d":  0, "l": 1, "f": 10, "a":  8, "playoff": "title_playoff"},
+                {"place":2, "team": "RACL", "w": 2, "d":  1, "l": 1, "f": 13, "a": 10},
+                {"place":3, "team": "HLBN", "w": 0, "d":  1, "l": 3, "f":  3, "a":  8, "playoff": "title_playoff","champion":true}
             ],
             "matches": [
                 {"home":"SCLX","away":"RACL","score":"6-5"},
@@ -23,8 +23,8 @@
             "name": "Series 2",
             "pts_win": 2,
             "standings": [
-                {"team": "JESH", "w": 1, "d":  1, "l": 0, "f": 5, "a": 4, "playoff": "title_playoff"},
-                {"team": "FOLA", "w": 0, "d":  1, "l": 1, "f": 4, "a": 5}
+                {"place":1, "team": "JESH", "w": 1, "d":  1, "l": 0, "f": 5, "a": 4, "playoff": "title_playoff"},
+                {"place":2, "team": "FOLA", "w": 0, "d":  1, "l": 1, "f": 4, "a": 5}
             ],
             "matches": [
                 {"home":"JESH","away":"FOLA","score":"3-2"},
@@ -34,8 +34,8 @@
             "name": "Series 3",
             "pts_win": 2,
             "standings": [
-                {"team": "SDUD", "w": 2, "d": 0, "l": 0, "f": 12, "a":  2,"playoff": "title_playoff"},
-                {"team": "USDD", "w": 0, "d": 0, "l": 2, "f":  2, "a": 12}
+                {"place":1, "team": "SDUD", "w": 2, "d": 0, "l": 0, "f": 12, "a":  2,"playoff": "title_playoff"},
+                {"place":2, "team": "USDD", "w": 0, "d": 0, "l": 2, "f":  2, "a": 12}
             ],
             "matches": [
                 {"home":"SDUD","away":"USDD","score":"6-1"},
@@ -45,8 +45,8 @@
             "name": "Series 4",
             "pts_win": 2,            
             "standings": [
-                {"team": "CPET", "w": 2, "d": 0, "l": 0, "f": 6, "a": 4,"playoff": "title_playoff"},
-                {"team": "SDIF", "w": 0, "d": 0, "l": 2, "f": 4, "a": 6}
+                {"place":1, "team": "CPET", "w": 2, "d": 0, "l": 0, "f": 6, "a": 4,"playoff": "title_playoff"},
+                {"place":2, "team": "SDIF", "w": 0, "d": 0, "l": 2, "f": 4, "a": 6}
             ],
             "matches": [
                 {"home":"CPET","away":"SDIF","score":"4-3"},
@@ -56,8 +56,8 @@
             "name": "Series 5",
             "pts_win": 2,
             "standings": [
-                {"team": "YBDK", "w": 2, "d": 0, "l": 0, "f": 10, "a":  0,"playoff": "title_playoff"},
-                {"team": "CECH", "w": 0, "d": 0, "l": 2, "f":  0, "a": 10}
+                {"place":1, "team": "YBDK", "w": 2, "d": 0, "l": 0, "f": 10, "a":  0,"playoff": "title_playoff"},
+                {"place":2, "team": "CECH", "w": 0, "d": 0, "l": 2, "f":  0, "a": 10}
             ],
             "matches": [
                 {"home":"YBDK","away":"CECH","score":"7-0"},
