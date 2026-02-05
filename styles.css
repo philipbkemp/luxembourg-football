@@ -22,7 +22,8 @@ table tbody tr td[colspan] {
     color: #999999;
     text-align: left;
 }
-table tbody tr td.team-name {
+table tbody tr td.team-name,
+table tbody tr td.team-notes {
     text-align: left;
     width: 250px;
 }
