@@ -10,7 +10,9 @@ table {
 table thead tr th,
 table tbody tr td {
     border:1px solid black;
+    min-width: 30px;
     padding: 5px;
+    text-align: center;
 }
 table thead tr th {
     background: black;

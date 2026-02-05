@@ -92,7 +92,7 @@
                     tr_team.textContent = row.team;
                     tbody_tr.append(tr_team);
 
-                    if ( ! league.missing ) {
+                    if ( ! row.missing ) {
                         td_stat = document.createElement("TD");
                         td_stat.textContent = row.w + row.d + row.l;
                         tbody_tr.append(td_stat);
