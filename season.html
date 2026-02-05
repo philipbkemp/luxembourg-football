@@ -50,7 +50,7 @@
                         aPrev = document.createElement("A");
                         aPrev.setAttribute("href","season.html?year="+data.prev);
                         aPrev.textContent = data.prev;
-                        navbar.append("| ");
+                        navbar.append(" | ");
                         navbar.append(aPrev);
                     }
                     if ( data.next ) {
@@ -58,7 +58,7 @@
                         aNext = document.createElement("A");
                         aNext.setAttribute("href","season.html?year="+data.next);
                         aNext.textContent = data.next;
-                        navbar.append("| ");
+                        navbar.append(" | ");
                         navbar.append(aNext);
                     }
 
@@ -83,6 +83,14 @@
                             if ( league.standings ) {
                                 dataKeys = dataKeys.filter(key => key !== 'league.standings');
                                 drawStandings(league.standings);
+                            }
+
+                            if ( league.matches ) {
+                                dataKeys = dataKeys.filter(key => key !== 'league.matches');
+                                h3 = document.createElement("H3");
+                                h3.textContent = "Matches";
+                                document.body.append(h3);
+                                drawMatchesTable(league.matches);
                             }
                         });
                     }
@@ -278,6 +286,16 @@
                 document.body.append(table);
             }
 
+            function drawMatchesTable(matches) {
+                matchTable = {};
+                matches.forEach(m=>{
+                    if ( ! Object.keys(matchTable).includes(m.home) ) {
+                        matchTable[m.home] = {};
+                    }
+                    matchTable[m.home][m.away] = m.score;
+                });
+                console.log(matchTable);
+            }
 
             function getAllKeys(obj, prefix = '') {
                 const keys = new Set();
