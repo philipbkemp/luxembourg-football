@@ -72,12 +72,17 @@
                     if ( data.league ) {
                         dataKeys = dataKeys.filter(key => key !== 'league');
                         data.league.forEach(league=>{
-                            h2 = document.createElement("H2");
-                            dataKeys = dataKeys.filter(key => key !== 'league.name');
-                            h2.textContent = league.name;
-                            dataKeys = dataKeys.filter(key => key !== 'league.level');
-                            h2.id = "league_" + league.level;
-                            document.body.append(h2);
+                            if ( ! league.series ) {
+                                h2 = document.createElement("H2");
+                                dataKeys = dataKeys.filter(key => key !== 'league.name');
+                                h2.textContent = league.name;
+                                dataKeys = dataKeys.filter(key => key !== 'league.level');
+                                h2.id = "league_" + league.level;
+                                document.body.append(h2);
+                            } else {
+                                dataKeys = dataKeys.filter(key => key !== 'league.series');
+                                drawSeries(league);
+                            }
 
                             if ( league.note ) {
                                 dataKeys = dataKeys.filter(key => key !== 'league.note');
@@ -139,6 +144,17 @@
                     }
                 });
             
+            function drawSeries(league) {
+                league.seriesforEach(serie=>{
+                    h2 = document.createElement("H2");
+                    dataKeys = dataKeys.filter(key => key !== 'league.series.name');
+                    h2.textContent = league.name + " " + serie.name;
+                    dataKeys = dataKeys.filter(key => key !== 'league.series.serie');
+                    h2.id = "league_" + league.level + "_" + serie.serie;
+                    document.body.append(h2);
+                });
+            }
+
             function drawMatch(matchData,keyPrefix) {
                 match_tr = document.createElement("TR");
 
