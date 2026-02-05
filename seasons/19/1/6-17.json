@@ -1,5 +1,7 @@
 {
     "season": "1916-17",
+    "next": "1917-18",
+    "prev": "1915-16",
     "league": [{
         "level": 1,
         "name": "1. Division",

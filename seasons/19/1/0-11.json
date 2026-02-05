@@ -1,5 +1,7 @@
 {
     "season": "1910-11",
+    "next": "1911-12",
+    "prev": "1909-10",
     "league": [{
         "level": 1,
         "name": "Klasse A",

@@ -1,5 +1,7 @@
 {
     "season": "1913-14",
+    "next": "1914-15",
+    "prev": "1912-13",
     "league": [{
         "level": 1,
         "name": "1. Division",
