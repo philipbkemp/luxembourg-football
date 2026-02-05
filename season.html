@@ -142,11 +142,13 @@
             function drawMatch(matchData,keyPrefix) {
                 match_tr = document.createElement("TR");
 
-                td_date = document.createElement("TD");
-                td_date.textContent = matchData.date;
-                td_date.classList.add("match-date");
-                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.date'));
-                match_tr.append(td_date);
+                if ( matchData.date ) {
+                    td_date = document.createElement("TD");
+                    td_date.textContent = matchData.date;
+                    td_date.classList.add("match-date");
+                    dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.date'));
+                    match_tr.append(td_date);
+                }
 
                 td_home = document.createElement("TD");
                 td_home.textContent = allTeams[matchData.home].name;
