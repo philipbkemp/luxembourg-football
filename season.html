@@ -137,7 +137,8 @@
                         td_stat.textContent = row.f - row.a;
                         tbody_tr.append(td_stat);
                         td_stat = document.createElement("TD");
-                        td_stat.textContent = (row.w*row.pts) + row.d;
+                        td_stat.textContent = (row.w*row.pts_win) + row.d;
+                        dataKeys = dataKeys.filter(key => key !== 'league.standings.pts_win');
                         tbody_tr.append(td_stat);
                     } else {
                         dataKeys = dataKeys.filter(key => key !== 'league.standings.missing');
