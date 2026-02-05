@@ -4,6 +4,10 @@
 a {
     color: blue !important;
 }
+a[href^='#'] {
+    color: darkblue !important;
+    text-underline-offset: 3px;
+}
 table {
     border-collapse: collapse;
 }

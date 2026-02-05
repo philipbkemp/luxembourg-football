@@ -234,7 +234,10 @@
 
                     if ( row.playoff ) {
                         dataKeys = dataKeys.filter(key => key !== 'league.standings.playoff');
-                        rowNotes.push( playoffNames(row.playoff) );
+                        playoffLink = document.createElement("A");
+                        playoffLink.setAttribute("href","#playoff_"+row.playoff);
+                        playoffLink.textContent = playoffNames(row.playoff);
+                        rowNotes.push( playoffLink );
                     }
 
                     tr_notes = document.createElement("TD");
