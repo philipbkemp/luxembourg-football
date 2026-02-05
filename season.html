@@ -54,7 +54,7 @@
                             if ( league.note ) {
                                 dataKeys = dataKeys.filter(key => key !== 'league.note');
                                 note = document.createElement("P");
-                                note.textContent = league.note;
+                                note.textContent = "Note: " + league.note;
                                 document.body.append(note);
                             }
 
@@ -101,6 +101,10 @@
                     thead_tr.append(th_stat);
                 });
 
+                th_notes = document.createElement("TH");
+                th_notes.textContent = "Notes";
+                thead_tr.append(th_notes);
+
                 thead.append(thead_tr);
                 table.append(thead);
 
@@ -109,13 +113,9 @@
                 standingsData.forEach(row=>{
                     tbody_tr = document.createElement("TR");
 
-                    if ( row.champion ) {
-                        dataKeys = dataKeys.filter(key => key !== 'league.standings.champion');
-                        tbody_tr.classList.add("is-champion");
-                    }
-
                     tr_place = document.createElement("TD");
                     tr_place.textContent = row.place;
+                    dataKeys = dataKeys.filter(key => key !== 'league.standings.place');
                     tbody_tr.append(tr_place);
 
                     tr_team = document.createElement("TD");
@@ -146,6 +146,28 @@
                         td_stats.setAttribute("colspan",8);
                         tbody_tr.append(td_stats);
                     }
+
+                    rowNotes = [];
+
+                    if ( row.champion ) {
+                        dataKeys = dataKeys.filter(key => key !== 'league.standings.champion');
+                        tbody_tr.classList.add("is-champion");
+                        rowNotes.push("Champion");
+                    }
+
+                    if ( row.playoff ) {
+                        dataKeys = dataKeys.filter(key => key !== 'league.standings.playoff');
+                        switch ( row.playoff ) {
+                            default:
+                                dataKeys.push("league.standings.playoff["+row.playoff+"]");
+                                rowNotes.push("Playoff ???");
+                        }
+                    }
+
+                    tr_notes = document.createElement("TD");
+                    tr_notes.textContent = rowNotes.join("; ");
+                    tr_notes.classList.add("team-notes");
+                    tbody_tr.append(tr_notes);
 
                     tbody.append(tbody_tr);
                 });
