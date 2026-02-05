@@ -40,6 +40,9 @@
 
                     dataKeys = getAllKeys(data);
 
+                    dataKeys.push("If no notes, hide notes column?");
+                    dataKeys.push("If no dates, hide date column - just in case one match has a date, another doesn't");
+
                     document.getElementsByTagName("title")[0].textContent += " | " + data.season;
                     document.getElementsByTagName("h1")[0].textContent += " : " + data.season;
                     dataKeys = dataKeys.filter(key => key !== 'season');
