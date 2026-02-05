@@ -17,8 +17,10 @@
         "note": "Full data not available"
     }],
     "playoffs": {
-        "title": [
-            {"date": "1910-05-06", "home":"RACL", "away":"HLBN", "score":"3-2", "outcome": "RACL champions"}
-        ]
+        "title": {
+            "matches": [
+                {"date": "1910-05-06", "home":"RACL", "away":"HLBN", "score":"3-2", "outcome": "RACL champions"}
+            ]
+        }
     }
 }

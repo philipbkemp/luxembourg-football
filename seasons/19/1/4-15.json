@@ -66,14 +66,18 @@
         }]
     }],
     "playoffs": {
-        "title_playoff": [
-            {"home":"JESH","away":"SDUD","score":"4-1"},
-            {"home":"JESH","away":"CPET","score":"4-0","outcome":"JESH qualify for TARGET"},
-            {"home":"SCLX","away":"YBDK","score":"4-1","outcome":"SCLX disqualified for fielding ineligible player during Series 1 matches"},
-            {"home":"HLBN","away":"YBDK","score":"3-0","forfeit":true,"outcome":"HLBN qualify for TARGET"}
-        ],
-        "title": [
-            {"home":"HLBN","away":"JESH","score":"8-1","outcome": "HLBN champions"}
-        ]
+        "title_playoff": {
+            "matches": [
+                {"home":"JESH","away":"SDUD","score":"4-1"},
+                {"home":"JESH","away":"CPET","score":"4-0","outcome":"JESH qualify for TARGET"},
+                {"home":"SCLX","away":"YBDK","score":"4-1","outcome":"SCLX disqualified for fielding ineligible player during Series 1 matches"},
+                {"home":"HLBN","away":"YBDK","score":"3-0","forfeit":true,"outcome":"HLBN qualify for TARGET"}
+            ]
+        },
+        "title": {
+            "matches": [
+                {"home":"HLBN","away":"JESH","score":"8-1","outcome": "HLBN champions"}
+            ]
+        }
     }
 }

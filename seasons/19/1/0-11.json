@@ -26,8 +26,10 @@
         ]
     }],
     "playoffs": {
-        "title": [
-            {"date": "1911-04-09","home":"SCLX","away":"SDIF","score":"3-0", "outcome": "SCLX champions"}
-        ]
+        "title": {
+            "matches": [
+                {"date": "1911-04-09","home":"SCLX","away":"SDIF","score":"3-0", "outcome": "SCLX champions"}
+            ]
+        }
     }
 }

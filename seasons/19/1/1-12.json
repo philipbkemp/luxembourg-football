@@ -26,8 +26,10 @@
         ]
     }],
     "playoffs": {
-        "title": [
-            {"home":"HLBN","away":"SCLX","score":"-", "outcome": "SCLX did not attend (thinking they won the league on goal difference) - HLBN declared champions"}
-        ]
+        "title": {
+            "matches": [
+                {"home":"HLBN","away":"SCLX","score":"-", "outcome": "SCLX did not attend (thinking they won the league on goal difference) - HLBN declared champions"}
+            ]
+        }
     }
 }

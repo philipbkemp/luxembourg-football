@@ -66,11 +66,12 @@
                     }
 
                     if ( data.playoffs ) {
-                        dataKeys = dataKeys.filter(key => key !== 'playoff');
+                        dataKeys = dataKeys.filter(key => key !== 'playoffs');
                         Object.entries(data.playoffs).forEach(([poName, poData])=>{
                             h2 = document.createElement("H2");
-                            dataKeys = dataKeys.filter(key => key !== ('playoff.'+poName));
-                            h2.textContent = playoffNames(poName);
+                            dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName));
+                            h2.textContent = "Playoff: " + playoffNames(poName);
+                            h2.id = "playoff_" + poName;
                             document.body.append(h2);
                         });
                     }

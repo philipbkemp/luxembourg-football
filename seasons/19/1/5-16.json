@@ -75,9 +75,11 @@
         }]
     }],
     "playoffs": {
-        "promotion_3": [
-            {"home":"CSHL","away":"JSTF","score":"5-0","outcome":"CSHL promoted"},
-            {"home":"JBET","away":"NSCH","score":"4-0","outcome":"JBET promoted"}
-        ]
+        "promotion_3": {
+            "matches": [
+                {"home":"CSHL","away":"JSTF","score":"5-0","outcome":"CSHL promoted"},
+                {"home":"JBET","away":"NSCH","score":"4-0","outcome":"JBET promoted"}
+            ]
+        }
     }
 }

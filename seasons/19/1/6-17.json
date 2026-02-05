@@ -79,8 +79,10 @@
         }]
     }],
     "playoffs": {
-        "promotion_3": [
-            {"home":"URUM","away":"AVBG","score":"6-2","outcome":"URUM promoted"}
-        ]
+        "promotion_3": {
+            "matches": [
+                {"home":"URUM","away":"AVBG","score":"6-2","outcome":"URUM promoted"}
+            ]
+        }
     }
 }
