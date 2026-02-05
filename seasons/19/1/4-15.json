@@ -71,6 +71,26 @@
                 {"home":"CECH","away":"YBDK","score":"0-3"}
             ]
         }]
+    },{
+        "level": 2,
+        "name": "2. Division",
+        "series": [{
+            "serie": 1,
+            "name": "Series 1",
+            "pts_win": 2,
+            "standings": [
+                {"place":1, "team":"PHLK", "w":1, "d":1, "l":0, "f":4, "a":3, "pts_win":2},
+                {"place":2, "team":"ROLG", "w":0, "d":1, "l":1, "f":3, "a":4, "pts_win":2}
+            ]
+        },{
+            "serie": 2,
+            "name": "Series 2",
+            "pts_win": 2,
+            "standings": [
+                {"place":1, "team":"UESH", "w":2, "d":0, "l":0, "f":7, "a":3, "pts_win":2},
+                {"place":2, "team":"JKYL", "w":0, "d":0, "l":2, "f":3, "a":7, "pts_win":2}
+            ]
+        }]
     }],
     "playoffs": {
         "title_playoff": {
