@@ -154,14 +154,21 @@
                     dataKeys = dataKeys.filter(key => key !== 'league.level');
                     h2.id = "league_" + league.level + "_" + serie.serie;
                     document.body.append(h2);
+
+                    if ( series.pts_win ) {
+                        dataKeys = dataKeys.filter(key => key !== 'league.series.pts_win');
+                        ptswin = document.createElement("P");
+                        ptswin.textContent = "Points for a win: " + series.pts_win;
+                        document.body.append(ptswin);
+                    }
                     
 
                     if ( serie.matches ) {
-                        dataKeys = dataKeys.filter(key => key !== 'series.matches');
+                        dataKeys = dataKeys.filter(key => key !== 'league.series.matches');
                         h3 = document.createElement("H3");
                         h3.textContent = "Matches";
                         document.body.append(h3);
-                        drawMatchesTable(serie.matches);
+                        drawMatchesTable(serie.matches,"league.series");
                     }
                 });
             }
@@ -333,16 +340,16 @@
                 document.body.append(table);
             }
 
-            function drawMatchesTable(matches) {
+            function drawMatchesTable(matches,prefix="league") {
                 matchGrid = {};
                 matches.forEach(m=>{
                     if ( ! Object.keys(matchGrid).includes(m.home) ) {
                         matchGrid[m.home] = {};
                     }
                     matchGrid[m.home][m.away] = m.score;
-                    dataKeys = dataKeys.filter(key => key !== ('league.matches.home'));
-                    dataKeys = dataKeys.filter(key => key !== ('league.matches.away'));
-                    dataKeys = dataKeys.filter(key => key !== ('league.matches.score'));
+                    dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.home'));
+                    dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.away'));
+                    dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.score'));
                 });
                 
                 teams = Object.keys(matchGrid).sort();
