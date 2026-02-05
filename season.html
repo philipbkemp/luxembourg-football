@@ -145,7 +145,7 @@
                 });
             
             function drawSeries(league) {
-                league.seriesforEach(serie=>{
+                league.series.forEach(serie=>{
                     h2 = document.createElement("H2");
                     dataKeys = dataKeys.filter(key => key !== 'league.series.name');
                     h2.textContent = league.name + " " + serie.name;
