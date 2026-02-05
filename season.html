@@ -8,7 +8,7 @@
         <h1>Luxembourgish Football: Seasons</h1>
         <div id="nav">
             <a href="index.html">Home</a>
-            |<a href="seasons.html">All Seasons</a>
+            | <a href="seasons.html">All Seasons</a>
         </div>
         <script>
             params=[];
@@ -50,7 +50,7 @@
                         aPrev = document.createElement("A");
                         aPrev.setAttribute("href","season.html?year="+data.prev);
                         aPrev.textContent = data.prev;
-                        navbar.append("|");
+                        navbar.append("| ");
                         navbar.append(aPrev);
                     }
                     if ( data.next ) {
@@ -58,7 +58,7 @@
                         aNext = document.createElement("A");
                         aNext.setAttribute("href","season.html?year="+data.next);
                         aNext.textContent = data.next;
-                        navbar.append("|");
+                        navbar.append("| ");
                         navbar.append(aNext);
                     }
 
