@@ -81,7 +81,7 @@
                                 matchTable = document.createElement("TABLE");
                                 matchTabelBody = document.createElement("TBODY");
                                 poData.matches.forEach(match=>{
-                                    matchTabelBody.append( drawMatch(match) ,"playoffs."+poName);
+                                    matchTabelBody.append( drawMatch(match,"playoffs."+poName));
                                 });
                                 matchTable.append(matchTabelBody);
                                 document.body.append(matchTable);
