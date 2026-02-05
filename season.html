@@ -327,7 +327,7 @@
                     gtRow.append(gtHome);
                     teams.forEach(a=>{
                         gtScore = document.createElement("TD");
-                        gtScore.textContent = matchGrid[h][a];
+                        gtScore.textContent = matchGrid[h][a] ?? "-";
                         gtRow.append(gtScore);
                     });
                     gtBody.append(gtRow);
