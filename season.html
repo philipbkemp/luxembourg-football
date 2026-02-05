@@ -241,7 +241,7 @@
                         playoffLink = document.createElement("A");
                         playoffLink.setAttribute("href","#playoff_"+row.playoff);
                         playoffLink.textContent = playoffNames(row.playoff);
-                        rowNotes.push( playoffLink );
+                        rowNotes.push( playoffLink.outerHTML );
                     }
 
                     tr_notes = document.createElement("TD");
