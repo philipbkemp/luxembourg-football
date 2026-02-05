@@ -10,7 +10,7 @@
         <script>
             params=[];
             window.location.search.replace("?","").split("&").forEach(param=>{parts=param.split("=");params[parts[0]]=parts[1];});
-            team = params.club;
+            team = params.team;
             fetch("clubs/"+team.toLowerCase()+".json")
                 .then(response => response.json())
                 .then(data => {

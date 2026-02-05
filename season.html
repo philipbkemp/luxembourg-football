@@ -10,7 +10,7 @@
         <script>
             params=[];
             window.location.search.replace("?","").split("&").forEach(param=>{parts=param.split("=");params[parts[0]]=parts[1];});
-            season = params.y;
+            season = params.year;
             seasonPath = [season[0]+""+season[1],season[2],season[3]+"-"+season.split("-")[1]];
             fetch("seasons/"+seasonPath.join("/")+".json")
                 .then(response => response.json())
