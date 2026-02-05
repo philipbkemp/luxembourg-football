@@ -18,3 +18,7 @@ table thead tr th {
     background: black;
     color: white;
 }
+table tbody tr td[colspan] {
+    color: #999999;
+    text-align: left;
+}

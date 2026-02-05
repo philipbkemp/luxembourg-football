@@ -12,6 +12,7 @@
             window.location.search.replace("?","").split("&").forEach(param=>{parts=param.split("=");params[parts[0]]=parts[1];});
             season = params.year;
             seasonPath = [season[0]+""+season[1],season[2],season[3]+"-"+season.split("-")[1]];
+            dataKeys = [];
             fetch("seasons/"+seasonPath.join("/")+".json")
                 .then(response => {
                     if ( ! response.ok ) {
@@ -25,22 +26,28 @@
                         return;
                     }
 
-                    console.log(getAllKeys(data));
+                    dataKeys = getAllKeys(data);
 
                     document.getElementsByTagName("title")[0].textContent += " | " + data.season;
                     document.getElementsByTagName("h1")[0].textContent += " : " + data.season;
 
                     // leagues
+                    dataKeys = dataKeys.filter(key => key !== 'league');
                     data.league.forEach(league=>{
                         h2 = document.createElement("H2");
+                        dataKeys = dataKeys.filter(key => key !== 'league.name');
                         h2.textContent = league.name;
+                        dataKeys = dataKeys.filter(key => key !== 'league.level');
                         h2.id = "league_" + league.level;
                         document.body.append(h2);
 
                         if ( league.standings ) {
+                            dataKeys = dataKeys.filter(key => key !== 'league.standings');
                             drawStandings(league.standings);
                         }
                     });
+
+                    console.log(dataKeys);
                 });
             
             function drawStandings(standingsData) {
@@ -106,7 +113,7 @@
                         td_stat.textContent = row.f - row.a;
                         tbody_tr.append(td_stat);
                         td_stat = document.createElement("TD");
-                        td_stat.textContent = (row.w*pts) + row.d;
+                        td_stat.textContent = (row.w*row.pts) + row.d;
                         tbody_tr.append(td_stat);
                     } else {
                         td_stats = document.createElement("TD");
