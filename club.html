@@ -12,12 +12,16 @@
             window.location.search.replace("?","").split("&").forEach(param=>{parts=param.split("=");params[parts[0]]=parts[1];});
             team = params.team;
             fetch("clubs/"+team.toLowerCase()+".json")
-                .then(response => response.json())
+                .then(response => {
+                    if ( ! reponse.ok ) {
+                        throw new Error("Failed to load JSON");
+                    }response.json()
+                })
                 .then(data => {
                     console.log(data);
                 })
                 .catch(error => {
-                    console.error("Could not load the file:", error.message);
+                    console.error(error.message);
                 });
         </script>
     </body>

@@ -13,12 +13,16 @@
             season = params.year;
             seasonPath = [season[0]+""+season[1],season[2],season[3]+"-"+season.split("-")[1]];
             fetch("seasons/"+seasonPath.join("/")+".json")
-                .then(response => response.json())
+                .then(response => {
+                    if ( ! reponse.ok ) {
+                        throw new Error("Failed to load JSON");
+                    }response.json()
+                })
                 .then(data => {
                     console.log(data);
                 })
                 .catch(error => {
-                    console.error("Could not load the file:", error.message);
+                    console.error(error.message);
                 });
         </script>
     </body>
