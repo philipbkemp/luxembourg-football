@@ -19,6 +19,8 @@
                     return response.json()
                 })
                 .then(data => {
+                    document.getElementsByTagName("title")[0].textContent += " | " + data.name;
+                    document.getElementsByTagName("h1")[0].textContent += " : " + data.name;
                     console.log(data);
                 })
                 .catch(error => {
