@@ -287,14 +287,46 @@
             }
 
             function drawMatchesTable(matches) {
-                matchTable = {};
+                matchGrid = {};
                 matches.forEach(m=>{
-                    if ( ! Object.keys(matchTable).includes(m.home) ) {
-                        matchTable[m.home] = {};
+                    if ( ! Object.keys(matchGrid).includes(m.home) ) {
+                        matchGrid[m.home] = {};
                     }
-                    matchTable[m.home][m.away] = m.score;
+                    matchGrid[m.home][m.away] = m.score;
                 });
-                console.log(matchTable);
+                
+                teams = Object.keys(matchGrid).sort();
+
+                gridTable = document.createElement("TABLE");
+                gridTableHead = document.createElement("THEAD");
+                gridTableHeadRow = document.createElement("TR");
+                gtTeam = document.createElement("TH");
+                gtTeam.textContent = "";
+                gridTableHeadRow.append(gtTeam);
+                teams.forEach(t=>{
+                    gtTeam = document.createElement("TH");
+                    gtTeam.textContent = t;
+                    gridTableHeadRow.append(gtTeam);
+                });
+                gridTableHead.append(gridTableHeadRow);
+                gridTable.append(gridTableHead);
+
+                gtBody = document.createElement("TBODY");
+                teams.forEach(h=>{
+                    gtRow = document.createElement("TR");
+                    gtHome = document.createElement("TD");
+                    gtHome.textContent = allTeams[h].name;
+                    gtRow.append(gtHome);
+                    teams.forEach(a=>{
+                        gtScore = document.createElement("TD");
+                        gtScore.textContent = matchGrid[h][a];
+                        gtRow.append(gtScore);
+                    });
+                    gtBody.append(gtRow);
+                });
+                gridTable.append(gtBody);
+
+                document.body.append(gridTable);
             }
 
             function getAllKeys(obj, prefix = '') {
