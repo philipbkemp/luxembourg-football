@@ -251,6 +251,7 @@
                             td_stat = document.createElement("TD");
                             td_stat.textContent = row[s];
                             tbody_tr.append(td_stat);
+                            dataKeys = dataKeys.filter(key => key !== 'league.standings.'+s);
                         });
                         td_stat = document.createElement("TD");
                         td_stat.textContent = (row.w*row.pts_win) + row.d;
