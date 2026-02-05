@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LuxFoot | Seasons</title>
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Luxembourgish Football: Seasons</h1>
+        <a href="index.html">Home</a>
+        <script>
+            params=[];
+            window.location.search.replace("?","").split("&").forEach(param=>{parts=param.split("=");params[parts[0]]=parts[1];});
+            season = params.year;
+            seasonPath = [season[0]+""+season[1],season[2],season[3]+"-"+season.split("-")[1]];
+            fetch(seasonPath.join("/")+".json")
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                });
+        </script>
+    </body>
+</html>
