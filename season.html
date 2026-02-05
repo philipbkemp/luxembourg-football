@@ -92,7 +92,9 @@
                         });
                     }
 
-                    console.log(dataKeys);
+                    if ( dataKeys.length !== 0 ) {
+                        console.warn(dataKeys);
+                    }
                 });
             
             function drawMatch(matchData,keyPrefix) {
