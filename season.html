@@ -79,9 +79,11 @@
                             if ( poData.matches ) {
                                 dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.matches'));
                                 matchTable = document.createElement("TABLE");
+                                matchTabelBody = document.createElement("TBODY");
                                 poData.matches.forEach(match=>{
-                                    matchTable.append( drawMatch(match) );
+                                    matchTabelBody.append( drawMatch(match) );
                                 });
+                                matchTable.append(matchTabelBody);
                                 document.body.append(matchTable);
                             }
                         });
