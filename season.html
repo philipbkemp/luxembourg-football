@@ -161,7 +161,11 @@
                         ptswin.textContent = "Points for a win: " + serie.pts_win;
                         document.body.append(ptswin);
                     }
-                    
+
+                    if ( serie.standings ) {
+                        dataKeys = dataKeys.filter(key => key !== 'league.series.standings');
+                        drawStandings(serie.standings,"league.series");
+                    }                    
 
                     if ( serie.matches ) {
                         dataKeys = dataKeys.filter(key => key !== 'league.series.matches');
@@ -229,7 +233,7 @@
                 return "???";
             }
 
-            function drawStandings(standingsData) {
+            function drawStandings(standingsData,prefix="league") {
                 table = document.createElement("TABLE");
                 
                 thead = document.createElement("THEAD");
@@ -276,13 +280,13 @@
 
                     tr_place = document.createElement("TD");
                     tr_place.textContent = row.place;
-                    dataKeys = dataKeys.filter(key => key !== 'league.standings.place');
+                    dataKeys = dataKeys.filter(key => key !== prefix + '.standings.place');
                     tbody_tr.append(tr_place);
 
                     tr_team = document.createElement("TD");
                     tr_team.textContent = allTeams[row.team].name;
                     tr_team.classList.add("team-name");
-                    dataKeys = dataKeys.filter(key => key !== 'league.standings.team');
+                    dataKeys = dataKeys.filter(key => key !== prefix + '.standings.team');
                     tbody_tr.append(tr_team);
 
                     if ( ! row.missing ) {
@@ -294,17 +298,17 @@
                             td_stat = document.createElement("TD");
                             td_stat.textContent = row[s];
                             tbody_tr.append(td_stat);
-                            dataKeys = dataKeys.filter(key => key !== 'league.standings.'+s);
+                            dataKeys = dataKeys.filter(key => key !== prefix + '.standings.'+s);
                         });
                         td_stat = document.createElement("TD");
                         td_stat.textContent = (row.w*row.pts_win) + row.d;
                         tbody_tr.append(td_stat);
-                        dataKeys = dataKeys.filter(key => key !== 'league.standings.pts_win');
+                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.pts_win');
                         td_stat = document.createElement("TD");
                         td_stat.textContent = row.f - row.a;
                         tbody_tr.append(td_stat);
                     } else {
-                        dataKeys = dataKeys.filter(key => key !== 'league.standings.missing');
+                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.missing');
                         td_stats = document.createElement("TD");
                         td_stats.textContent = "Missing data";
                         td_stats.setAttribute("colspan",8);
@@ -314,13 +318,13 @@
                     rowNotes = [];
 
                     if ( row.champion ) {
-                        dataKeys = dataKeys.filter(key => key !== 'league.standings.champion');
+                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.champion');
                         tbody_tr.classList.add("is-champion");
                         rowNotes.push("Champion");
                     }
 
                     if ( row.playoff ) {
-                        dataKeys = dataKeys.filter(key => key !== 'league.standings.playoff');
+                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.playoff');
                         playoffLink = document.createElement("A");
                         playoffLink.setAttribute("href","#playoff_"+row.playoff);
                         playoffLink.textContent = playoffNames(row.playoff);
