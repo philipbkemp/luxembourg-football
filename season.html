@@ -65,9 +65,28 @@
                         });
                     }
 
+                    if ( data.playoffs ) {
+                        dataKeys = dataKeys.filter(key => key !== 'playoff');
+                        data.playoffs.forEach((poName,poData)=>{
+                            h2 = document.createElement("H2");
+                            dataKeys = dataKeys.filter(key => key !== ('playoff.'+poName));
+                            h2.textContent = playoffNames(poName);
+                            document.body.append(h2);
+                        });
+                    }
+
                     console.log(dataKeys);
                 });
             
+            function playoffNames(poName) {
+                switch( poName ) {
+                    case "title":
+                        return "Title decider";
+                        break;
+                }
+                return "???";
+            }
+
             function drawStandings(standingsData) {
                 table = document.createElement("TABLE");
                 
@@ -159,11 +178,7 @@
 
                     if ( row.playoff ) {
                         dataKeys = dataKeys.filter(key => key !== 'league.standings.playoff');
-                        switch ( row.playoff ) {
-                            default:
-                                dataKeys.push("league.standings.playoff["+row.playoff+"]");
-                                rowNotes.push("Playoff ???");
-                        }
+                        rowNotes.push( playoffNames(row.playoff) );
                     }
 
                     tr_notes = document.createElement("TD");
