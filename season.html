@@ -156,10 +156,14 @@
                 match_tr.append(td_away);
 
                 td_outcome = document.createElement("TD");
-                td_outcome.textContent = matchData.outcome
-                    .replace(matchData.home,allTeams[matchData.home].name)
-                    .replace(matchData.away,allTeams[matchData.away].name)
-                    ;
+                if ( matchData.outcome ) {
+                    td_outcome.textContent = matchData.outcome
+                        .replace(matchData.home,allTeams[matchData.home].name)
+                        .replace(matchData.away,allTeams[matchData.away].name)
+                        ;
+                } else {
+                    td_outcome.textContent = "";
+                }
                 td_outcome.classList.add("team-notes");
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.outcome'));
                 match_tr.append(td_outcome);
