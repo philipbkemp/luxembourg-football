@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LuxFoot | Clubs</title>
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Luxembourgish Football: Clubs</h1>
+        <a href="index.html">Home</a>
+        <script>
+            params=[];
+            window.location.search.replace("?","").split("&").forEach(param=>{parts=param.split("=");params[parts[0]]=parts[1];});
+            team = params.club;
+            fetch("clubs/"+team.toLowerCase()+".json")
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                });
+        </script>
+    </body>
+</html>
