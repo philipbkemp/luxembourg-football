@@ -5,12 +5,12 @@
         "name": "1. Division",
         "pts_win": 2,
         "standings": [
-            {"place":1, "team": "HLBN", "w": 7, "d": 2, "l": 1, "f": 35, "a": 13, "champion": true},
-		    {"place":2, "team": "SCLX", "w": 5, "d": 2, "l": 3, "f": 21, "a": 16},
-		    {"place":3, "team": "FOLA", "w": 4, "d": 3, "l": 3, "f": 29, "a": 24},
-		    {"place":4, "team": "RACL", "w": 4, "d": 1, "l": 5, "f": 23, "a": 18},
-		    {"place":5, "team": "JESH", "w": 3, "d": 1, "l": 6, "f": 15, "a": 34},
-		    {"place":6, "team": "SDUD", "w": 2, "d": 1, "l": 7, "f": 14, "a": 32, "relegated": true}
+            {"place":1, "team": "HLBN", "w": 7, "d": 2, "l": 1, "f": 35, "a": 13, "pts_win":2, "champion": true},
+		    {"place":2, "team": "SCLX", "w": 5, "d": 2, "l": 3, "f": 21, "a": 16, "pts_win":2},
+		    {"place":3, "team": "FOLA", "w": 4, "d": 3, "l": 3, "f": 29, "a": 24, "pts_win":2},
+		    {"place":4, "team": "RACL", "w": 4, "d": 1, "l": 5, "f": 23, "a": 18, "pts_win":2},
+		    {"place":5, "team": "JESH", "w": 3, "d": 1, "l": 6, "f": 15, "a": 34, "pts_win":2},
+		    {"place":6, "team": "SDUD", "w": 2, "d": 1, "l": 7, "f": 14, "a": 32, "pts_win":2, "relegated": true}
         ],
         "matches": [
             {"home":"HLBN","away":"SCLX","score":"3-0"},
