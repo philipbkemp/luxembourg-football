@@ -155,10 +155,10 @@
                     h2.id = "league_" + league.level + "_" + serie.serie;
                     document.body.append(h2);
 
-                    if ( series.pts_win ) {
+                    if ( serie.pts_win ) {
                         dataKeys = dataKeys.filter(key => key !== 'league.series.pts_win');
                         ptswin = document.createElement("P");
-                        ptswin.textContent = "Points for a win: " + series.pts_win;
+                        ptswin.textContent = "Points for a win: " + serie.pts_win;
                         document.body.append(ptswin);
                     }
                     
