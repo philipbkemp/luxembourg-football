@@ -148,10 +148,21 @@
                 league.series.forEach(serie=>{
                     h2 = document.createElement("H2");
                     dataKeys = dataKeys.filter(key => key !== 'league.series.name');
+                    dataKeys = dataKeys.filter(key => key !== 'league.name');
                     h2.textContent = league.name + " " + serie.name;
                     dataKeys = dataKeys.filter(key => key !== 'league.series.serie');
+                    dataKeys = dataKeys.filter(key => key !== 'league.level');
                     h2.id = "league_" + league.level + "_" + serie.serie;
                     document.body.append(h2);
+                    
+
+                    if ( serie.matches ) {
+                        dataKeys = dataKeys.filter(key => key !== 'series.matches');
+                        h3 = document.createElement("H3");
+                        h3.textContent = "Matches";
+                        document.body.append(h3);
+                        drawMatchesTable(serie.matches);
+                    }
                 });
             }
 
