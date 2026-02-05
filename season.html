@@ -70,12 +70,16 @@
 
                     if ( data.playoffs ) {
                         dataKeys = dataKeys.filter(key => key !== 'playoffs');
+                        h2 = document.createElement("H2");
+                        h2.textContent = "Playoffs";
+                        document.body.append(h2);
+
                         Object.entries(data.playoffs).forEach(([poName, poData])=>{
-                            h2 = document.createElement("H2");
+                            h3 = document.createElement("H3");
                             dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName));
-                            h2.textContent = "Playoff: " + playoffNames(poName);
-                            h2.id = "playoff_" + poName;
-                            document.body.append(h2);
+                            h3.textContent = playoffNames(poName);
+                            h3.id = "playoff_" + poName;
+                            document.body.append(h3);
 
                             if ( poData.matches ) {
                                 dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.matches'));
