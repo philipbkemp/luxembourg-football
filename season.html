@@ -28,7 +28,7 @@
                     document.getElementsByTagName("h1")[0].textContent += " : " + data.season;
 
                     // leagues
-                    data.leagues.forEach(league=>{
+                    data.league.forEach(league=>{
                         h2 = document.createElement("H2");
                         h2.textContent = league.name;
                         h2.id = "league_" + league.level;
