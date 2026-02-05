@@ -44,6 +44,13 @@
                     document.getElementsByTagName("h1")[0].textContent += " : " + data.season;
                     dataKeys = dataKeys.filter(key => key !== 'season');
 
+                    if ( data.note ) {
+                        dataKeys = dataKeys.filter(key => key !== 'note');
+                        globalNote = document.createElement("P");
+                        globalNote.textContent = "Note: " + data.note;
+                        document.body.append(globalNote);
+                    }
+
                     navbar = document.getElementById("nav");
                     if ( data.prev ) {
                         dataKeys = dataKeys.filter(key => key !== 'prev');
