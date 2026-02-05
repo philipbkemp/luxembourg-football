@@ -26,3 +26,7 @@ table tbody tr td.team-name {
     text-align: left;
     width: 250px;
 }
+abbr {
+    cursor: help;
+    text-underline-offset: 3px;
+}

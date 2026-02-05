@@ -40,6 +40,7 @@
                     document.getElementsByTagName("title")[0].textContent += " | " + data.season;
                     document.getElementsByTagName("h1")[0].textContent += " : " + data.season;
 
+
                     // leagues
                     dataKeys = dataKeys.filter(key => key !== 'league');
                     data.league.forEach(league=>{
@@ -49,6 +50,14 @@
                         dataKeys = dataKeys.filter(key => key !== 'league.level');
                         h2.id = "league_" + league.level;
                         document.body.append(h2);
+
+                        // note
+                        if ( league.note ) {
+                            dataKeys = dataKeys.filter(key => key !== 'league.note');
+                            note = document.creatElement("P");
+                            note.textContent = league.note;
+                            document.body.append(note);
+                        }
 
                         if ( league.standings ) {
                             dataKeys = dataKeys.filter(key => key !== 'league.standings');
