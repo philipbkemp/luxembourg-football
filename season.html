@@ -54,7 +54,7 @@
                         // note
                         if ( league.note ) {
                             dataKeys = dataKeys.filter(key => key !== 'league.note');
-                            note = document.creatElement("P");
+                            note = document.createElement("P");
                             note.textContent = league.note;
                             document.body.append(note);
                         }
