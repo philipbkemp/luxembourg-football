@@ -67,7 +67,7 @@
 
                     if ( data.playoffs ) {
                         dataKeys = dataKeys.filter(key => key !== 'playoff');
-                        data.playoffs.forEach((poName,poData)=>{
+                        Object.entries(data.playoffs).forEach(([poName, poData])=>{
                             h2 = document.createElement("H2");
                             dataKeys = dataKeys.filter(key => key !== ('playoff.'+poName));
                             h2.textContent = playoffNames(poName);
