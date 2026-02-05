@@ -98,27 +98,27 @@
                 td_date = document.createElement("TD");
                 td_date.textContent = matchData.date;
                 td_date.classList.add("match-date");
-                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.date'));
+                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.date'));
                 match_tr.append(td_date);
 
                 td_home = document.createElement("TD");
                 td_home.textContent = allTeams[matchData.home].name;
                 td_home.classList.add("team-name");
                 td_home.classList.add("match-home");
-                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.home'));
+                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.home'));
                 match_tr.append(td_home);
 
                 td_score = document.createElement("TD");
                 td_score.textContent = matchData.score;
                 td_score.classList.add("match-score");
-                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.score'));
+                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.score'));
                 match_tr.append(td_score);
 
                 td_away = document.createElement("TD");
                 td_away.textContent = allTeams[matchData.away].name;
                 td_away.classList.add("team-name");
                 td_away.classList.add("match-away");
-                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.away'));
+                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.away'));
                 match_tr.append(td_away);
 
                 td_outcome = document.createElement("TD");
@@ -127,7 +127,7 @@
                     .replace(matchData.away,allTeams[matchData.away].name)
                     ;
                 td_outcome.classList.add("team-notes");
-                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.outcome'));
+                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.outcome'));
                 match_tr.append(td_outcome);
 
                 return match_tr;
