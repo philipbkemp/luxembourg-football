@@ -1,6 +1,9 @@
 * {
     font-family: monospace;
 }
+body {
+    margin-bottom: 150px;
+}
 a {
     color: blue !important;
 }
