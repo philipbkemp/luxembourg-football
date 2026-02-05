@@ -108,7 +108,7 @@
                                 h3 = document.createElement("H3");
                                 h3.textContent = "Matches";
                                 document.body.append(h3);
-                                drawMatchesTable(league.matches);
+                                drawMatchesGrid(league.matches);
                             }
                         });
                     }
@@ -172,7 +172,7 @@
                         h3 = document.createElement("H3");
                         h3.textContent = "Matches";
                         document.body.append(h3);
-                        drawMatchesTable(serie.matches,"league.series");
+                        drawMatchesGrid(serie.matches,"league.series");
                     }
                 });
             }
@@ -197,6 +197,11 @@
 
                 td_score = document.createElement("TD");
                 td_score.textContent = matchData.score;
+                if ( matchData.forfeit ) {
+                    td_score.append("<br />");
+                    td_score.append("Forfeit");
+                    dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.forfeit'));
+                }
                 td_score.classList.add("match-score");
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.score'));
                 match_tr.append(td_score);
@@ -230,6 +235,7 @@
                         return "Title decider";
                         break;
                 }
+                dataKeys.push("playoffNames("+poName+")");
                 return "???";
             }
 
@@ -344,7 +350,7 @@
                 document.body.append(table);
             }
 
-            function drawMatchesTable(matches,prefix="league") {
+            function drawMatchesGrid(matches,prefix="league") {
                 matchGrid = {};
                 matches.forEach(m=>{
                     if ( ! Object.keys(matchGrid).includes(m.home) ) {
