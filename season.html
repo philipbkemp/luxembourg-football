@@ -305,7 +305,10 @@
                 gridTableHeadRow.append(gtTeam);
                 teams.forEach(t=>{
                     gtTeam = document.createElement("TH");
-                    gtTeam.textContent = t;
+                    gtAbbr = document.createElement("ABBR");
+                    gtAbbr.textContent = t;
+                    gtAbbr.setAttribute("title",allTeams[t].name);
+                    gtTeam.append(gtAbbr);
                     gridTableHeadRow.append(gtTeam);
                 });
                 gridTableHead.append(gridTableHeadRow);
@@ -316,6 +319,7 @@
                     gtRow = document.createElement("TR");
                     gtHome = document.createElement("TD");
                     gtHome.textContent = allTeams[h].name;
+                    gtHome.classList.add("team-name");
                     gtRow.append(gtHome);
                     teams.forEach(a=>{
                         gtScore = document.createElement("TD");
