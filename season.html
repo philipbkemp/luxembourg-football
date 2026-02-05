@@ -200,7 +200,7 @@
                 if ( matchData.forfeit ) {
                     br = document.createElement("BR");
                     td_score.append(br);
-                    td_score.append("Forfeit");
+                    td_score.append("(forfeit)");
                     dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.forfeit'));
                 }
                 td_score.classList.add("match-score");
@@ -232,7 +232,7 @@
 
             function playoffNames(poName) {
                 switch( poName ) {
-                    case "playoff_title":
+                    case "title_playoff":
                         return "Playoff";
                         break;
                     case "title":
