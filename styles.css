@@ -50,6 +50,9 @@ table tbody tr td.match-score {
 table.matches-no-dates tr :first-child {
     display: none;
 }
+table.standings-no-notes tr :last-child {
+    display: none;
+}
 h2 {
     border-top: 1px solid #999999;
     padding-top: 10px;

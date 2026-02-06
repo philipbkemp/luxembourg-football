@@ -138,7 +138,7 @@
                                     matchTabelBody.append(createdTr);
                                     matchTableHasDates = matchTableHasDates || rowHasDates;
                                 });
-                                if ( matchTableHasDates ) {
+                                if ( ! matchTableHasDates ) {
                                     matchTable.classList.add("matches-no-dates");
                                 }
                                 matchTable.append(matchTabelBody);
@@ -257,6 +257,7 @@
 
             function drawStandings(standingsData,prefix="league") {
                 table = document.createElement("TABLE");
+                hasNotes = false;
                 
                 thead = document.createElement("THEAD");
                 thead_tr = document.createElement("TR");
@@ -354,13 +355,19 @@
                     }
 
                     tr_notes = document.createElement("TD");
-                    tr_notes.innerHTML = rowNotes.join("; ");
+                    if ( rowNotes.length !== 0 ) {
+                        tr_notes.innerHTML = rowNotes.join("; ");
+                        hasNotes = true;
+                    }
                     tr_notes.classList.add("team-notes");
                     tbody_tr.append(tr_notes);
 
                     tbody.append(tbody_tr);
                 });
 
+                if ( ! hasNotes ) {
+                    table.classList.add("standings-no-notes");
+                }
                 table.append(tbody);
 
                 document.body.append(table);
