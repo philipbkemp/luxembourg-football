@@ -20,7 +20,7 @@
                         document.body.append(errorP);
                         return {"invalid":true};
                     }
-                    return response.json()
+                    return response.json();
                 })
                 .then(data => {
                     if ( data.invalid ) {
