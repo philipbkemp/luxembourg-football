@@ -61,6 +61,11 @@
                 thead = document.createElement("THEAD");
                 thead_tr = document.createElement("TR");
 
+                th_level = document.createElement("TH");
+                th_level.setAttribute("colspan",6);
+                th_level.textContent = "Level";
+                thead_tr.append(th_level);
+
                 th_league = document.createElement("TH");
                 th_league.textContent = "League";
                 thead_tr.append(th_league);
@@ -99,6 +104,17 @@
                 
                 standingsData.forEach(row=>{
                     tbody_tr = document.createElement("TR");
+
+                    for ( i=0 ; i<6 ; i++ ) {
+                        td_level = document.createElement("TD");
+                        if ( league.level === (i+1) ) {
+                            td_level.textContent = "x";
+                        } else {
+                            td_level.textContent = "";
+                        }
+                        tbody_tr.append(td_level);
+                    }
+                    dataKeys = dataKeys.filter(key => key !== 'league.level');
 
                     tr_league = document.createElement("TD");
                     tr_league.textContent = row.league;
