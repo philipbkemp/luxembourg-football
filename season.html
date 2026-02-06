@@ -488,6 +488,12 @@
                 gridTable.append(gtBody);
 
                 document.body.append(gridTable);
+
+                matchGridNotes.forEach(note=>{
+                    noteP = document.createElement("P");
+                    noteP.textContent = note;
+                    document.body.append(noteP);
+                });
             }
 
             function getAllKeys(obj, prefix = '') {
