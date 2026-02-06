@@ -136,7 +136,7 @@
                             matchTabelBody = document.createElement("TBODY");
                             matchTableHasDates = false;
                             poData.matches.forEach(match=>{
-                                var [createdTr,rowHasDates] = drawMatch(match,"playoffs."+poName);
+                                var [createdTr,rowHasDates] = drawMatch(match,"playoffs."+poName,true);
                                 matchTabelBody.append(createdTr);
                                 matchTableHasDates = matchTableHasDates || rowHasDates;
                             });
@@ -187,7 +187,7 @@
                 });
             }
 
-            function drawMatch(matchData,keyPrefix) {
+            function drawMatch(matchData,keyPrefix,highlightWinner=false) {
                 match_tr = document.createElement("TR");
                 hasDates = false;
 
@@ -202,11 +202,24 @@
                 }
                 match_tr.append(td_date);
 
+                scoreParts = matchData.score.split("-");
+                homeScore = parseInt(scoreParts[0]);
+                awayScore = parseInt(scoreParts[1]);
+                winner = "";
+                if ( homeScore > awayScore ) {
+                    winner = "home";
+                } else if ( awayScore > homeScore ) {
+                    winner = "away";
+                }
+
                 td_home = document.createElement("TD");
                 td_home.textContent = allTeams[matchData.home].name;
                 td_home.classList.add("team-name");
                 td_home.classList.add("match-home");
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.home'));
+                if ( highlightWinner && winner === "away" ) {
+                    td_home.classList.add("match-loser");
+                }
                 match_tr.append(td_home);
 
                 td_score = document.createElement("TD");
@@ -226,6 +239,9 @@
                 td_away.classList.add("team-name");
                 td_away.classList.add("match-away");
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.away'));
+                if ( highlightWinner && winner === "home" ) {
+                    td_home.classList.add("match-loser");
+                }
                 match_tr.append(td_away);
 
                 td_outcome = document.createElement("TD");

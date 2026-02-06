@@ -26,7 +26,7 @@ table thead tr th {
     color: white;
 }
 table tbody tr td[colspan] {
-    color: #999999;
+    opacity: 0.7;
     text-align: left;
 }
 table tbody tr td.team-name,
@@ -52,6 +52,9 @@ table tbody tr td.match-home {
 }
 table tbody tr td.match-score {
     width: 75px;
+}
+table tbody tr td.match-loser {
+    opacity: 0.7;
 }
 table.matches-no-dates tr > :first-child {
     display: none;
