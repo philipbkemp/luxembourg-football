@@ -105,6 +105,16 @@
                 standingsData.forEach(row=>{
                     tbody_tr = document.createElement("TR");
 
+                    if ( row.gap ) {
+                        dataKeys = dataKeys.filter(key => key !== 'league.gap');
+                        tr_gap = document.createElement("TD");
+                        tr_gap.textContent = "";
+                        tr_gap.setAttribute("colspan",17);
+                        tbody_tr.append(tr_gap);
+                        tbody.append(tbody_tr);
+                        return;
+                    }
+
                     tr_season = document.createElement("TD");
                     tr_season.textContent = row.season;
                     dataKeys = dataKeys.filter(key => key !== 'league.season');
@@ -123,11 +133,7 @@
                     dataKeys = dataKeys.filter(key => key !== 'league.level');
 
                     tr_league = document.createElement("TD");
-                    leagueLink = document.createElement("A");
-                    leagueLink.textContent = row.league;
-                    leagueLink.setAttribute("href","season.html?year="+row.season+"#league_"+row.level+(row.series?("_"+row.series):""));
-                    dataKeys = dataKeys.filter(key => key !== 'league.series');
-                    tr_league.append(leagueLink);
+                    tr_league.textContent = row.league;
                     tr_league.classList.add("league-name");
                     dataKeys = dataKeys.filter(key => key !== 'league.league');
                     tbody_tr.append(tr_league);
@@ -212,6 +218,7 @@
 
                 // unused properties
                 dataKeys = dataKeys.filter(key => key !== 'league.team');
+                dataKeys = dataKeys.filter(key => key !== 'league.series');
 
                 document.body.append(table);
             }

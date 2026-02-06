@@ -2,6 +2,7 @@
     "code": "BLVL",
     "name": "The Belval Belvaux",
     "league": [
+        {"gap":true},
         {"place":4, "team": "BLVL", "w": 1, "d": 0, "l": 5, "f": 15, "a": 23, "season": "1916-17", "level":3, "series":2, "league":"3. Division Series Esch", "pts_win":2,"removed":true,"note":"Did not compete next season"}
     ]
 }
