@@ -29,10 +29,13 @@ table tbody tr td[colspan] {
     opacity: 0.6;
     text-align: left;
 }
-table tbody tr td.team-name,
-table tbody tr td.team-notes {
+table tbody tr td.team-name {
     text-align: left;
     width: 250px;
+}
+table tbody tr td.team-notes {
+    text-align: left;
+    width: 400px;
 }
 abbr {
     cursor: help;
