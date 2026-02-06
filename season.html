@@ -444,7 +444,7 @@
                         dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.forfeit'));
                         matchGrid[m.home][m.away] = "<abbr title='Match forfeited'>"+m.score+"</abbr>";
                         matchGridNotes.push(
-                            "Match between " + allTeams[m.home].name + " and " + allTeams[m.away] + " awarded as " + m.score + "forfeit"
+                            "* Match between " + allTeams[m.home].name + " and " + allTeams[m.away].name + " awarded as " + m.score + "forfeit"
                         );
                     }
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.home'));
