@@ -125,7 +125,7 @@
                     tr_league = document.createElement("TD");
                     leagueLink = document.createElement("A");
                     leagueLink.textContent = row.league;
-                    leagueLink.setAttribute("href","season.html?year="+row.season+"_"+row.level+(row.series?("_"+row.series):""));
+                    leagueLink.setAttribute("href","season.html?year="+row.season+"#league_"+row.level+(row.series?("_"+row.series):""));
                     dataKeys = dataKeys.filter(key => key !== 'league.series');
                     tr_league.append(leagueLink);
                     tr_league.classList.add("league-name");
