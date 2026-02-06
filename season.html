@@ -133,6 +133,7 @@
                                 dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.matches'));
                                 matchTable = document.createElement("TABLE");
                                 matchTabelBody = document.createElement("TBODY");
+                                matchTableHasDates = false;
                                 poData.matches.forEach(match=>{
                                     var [createdTr,rowHasDates] = drawMatch(match,"playoffs."+poName);
                                     matchTabelBody.append(createdTr);
