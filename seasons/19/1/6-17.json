@@ -78,7 +78,7 @@
                 {"place":1, "team": "URUM", "w": 5, "d": 1, "l": 0, "f": 20, "a":  7, "pts_win":2, "playoff":"promotion_3", "promoted":true},
                 {"place":2, "team": "NSCH", "w": 3, "d": 2, "l": 1, "f": 20, "a": 16, "pts_win":2},
                 {"place":3, "team": "STET", "w": 1, "d": 1, "l": 4, "f":  9, "a": 18, "pts_win":2},
-                {"place":4, "team": "BLVL", "w": 1, "d": 0, "l": 5, "f": 15, "a": 23, "pts_win":2,"removed":true,"note":"Did not compete next season"}
+                {"place":4, "team": "BLVL", "w": 1, "d": 0, "l": 5, "f": 15, "a": 23, "season": "1916-17", "level":3, "series":2, "league":"3. Division Series Esch", "pts_win":2,"removed":true,"note":"Did not compete next season"}
             ]
         }]
     }],
