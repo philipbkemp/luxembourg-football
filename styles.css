@@ -50,6 +50,9 @@ tr.is-promoted {
 tr.is-relegated {
     background: #e19284;
 }
+tr.is-removed {
+    background: #db0404;
+}
 table tbody tr td.match-home {
     text-align: right;
 }

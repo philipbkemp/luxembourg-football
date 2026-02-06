@@ -376,6 +376,11 @@
                         tbody_tr.classList.add("is-relegated");
                         rowNotes.push("Relegated");
                     }
+                    if ( row.removed ) {
+                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.removed');
+                        tbody_tr.classList.add("is-removed");
+                        rowNotes.push("Removed");
+                    }
 
                     if ( row.playoff ) {
                         dataKeys = dataKeys.filter(key => key !== prefix + '.standings.playoff');
