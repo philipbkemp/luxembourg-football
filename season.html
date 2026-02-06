@@ -240,7 +240,7 @@
                 td_away.classList.add("match-away");
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.away'));
                 if ( highlightWinner && winner === "home" ) {
-                    td_home.classList.add("match-loser");
+                    td_away.classList.add("match-loser");
                 }
                 match_tr.append(td_away);
 
