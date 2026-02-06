@@ -123,7 +123,10 @@
                     dataKeys = dataKeys.filter(key => key !== 'league.level');
 
                     tr_league = document.createElement("TD");
-                    tr_league.textContent = row.league;
+                    leagueLink = document.createElement("A");
+                    leagueLink.textContent = row.league;
+                    leagueLink.setAttribute("href","season.html?year="+row.season+"_"+row.level+(row.series?("_"+row.series):""));
+                    tr_league.append(leagueLink);
                     tr_league.classList.add("league-name");
                     dataKeys = dataKeys.filter(key => key !== 'league.league');
                     tbody_tr.append(tr_league);
