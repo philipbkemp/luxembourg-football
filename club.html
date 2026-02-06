@@ -11,7 +11,7 @@
             params=[];
             window.location.search.replace("?","").split("&").forEach(param=>{parts=param.split("=");params[parts[0]]=parts[1];});
             team = params.team;
-            allTeams = null;
+            allTeams = [];
             fetch("clubs/"+team.toLowerCase()+".json")
                 .then(response => {
                     if ( ! response.ok ) {
