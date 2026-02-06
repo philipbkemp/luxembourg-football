@@ -61,6 +61,10 @@
                 thead = document.createElement("THEAD");
                 thead_tr = document.createElement("TR");
 
+                th_season = document.createElement("TH");
+                th_season.textContent = "Season";
+                thead_tr.append(th_season);
+
                 th_level = document.createElement("TH");
                 th_level.setAttribute("colspan",6);
                 th_level.textContent = "Level";
@@ -100,6 +104,11 @@
                 
                 standingsData.forEach(row=>{
                     tbody_tr = document.createElement("TR");
+
+                    tr_season = document.createElement("TD");
+                    tr_season.textContent = row.season;
+                    dataKeys = dataKeys.filter(key => key !== 'league.season');
+                    tbody_tr.append(tr_season);
                     
                     for ( i=0 ; i<6 ; i++ ) {
                         td_level = document.createElement("TD");
