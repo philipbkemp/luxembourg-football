@@ -434,11 +434,19 @@
 
             function drawMatchesGrid(matches,prefix="league") {
                 matchGrid = {};
+                matchGridNotes = [];
                 matches.forEach(m=>{
                     if ( ! Object.keys(matchGrid).includes(m.home) ) {
                         matchGrid[m.home] = {};
                     }
                     matchGrid[m.home][m.away] = m.score;
+                    if ( m.forfeit ) {
+                        dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.forfeit'));
+                        matchGrid[m.home][m.away] = "<abbr title='Match forfeited'>"+m.score+"</abbr>";
+                        matchGridNotes.push(
+                            "Match between " + allTeams[m.home].name + " and " + allTeams[m.away] + " awarded as " + m.score + "forfeit"
+                        );
+                    }
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.home'));
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.away'));
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.score'));
@@ -472,7 +480,7 @@
                     gtRow.append(gtHome);
                     teams.forEach(a=>{
                         gtScore = document.createElement("TD");
-                        gtScore.textContent = matchGrid[h][a] ?? "-";
+                        gtScore.innerHTML = matchGrid[h][a] ?? "-";
                         gtRow.append(gtScore);
                     });
                     gtBody.append(gtRow);
