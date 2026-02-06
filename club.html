@@ -104,7 +104,8 @@
                 
                 standingsData.forEach(row=>{
                     tbody_tr = document.createElement("TR");
-
+                    
+                    console.log(league.level);
                     for ( i=0 ; i<6 ; i++ ) {
                         td_level = document.createElement("TD");
                         if ( league.level === (i+1) ) {
