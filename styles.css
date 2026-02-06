@@ -11,6 +11,9 @@ a[href^='#'] {
     color: darkblue !important;
     text-underline-offset: 3px;
 }
+p.error {
+    color: red;
+}
 table {
     border-collapse: collapse;
 }

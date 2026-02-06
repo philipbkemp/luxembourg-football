@@ -28,7 +28,10 @@
                 })
                 .then(response => {
                     if ( ! response.ok ) {
-                        console.error(error.message);
+                        errorP = document.createElement("P");
+                        errorP.classList.add("error");
+                        errorP.textContent = "Season not found";
+                        document.body.append(errorP);
                         return {"invalid":true};
                     }
                     return response.json()
