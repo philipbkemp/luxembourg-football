@@ -41,6 +41,9 @@ abbr {
 tr.is-champion {
     background: #aad9f5;
 }
+tr.is-promoted {
+    background: #9acd32;
+}
 table tbody tr td.match-home {
     text-align: right;
 }

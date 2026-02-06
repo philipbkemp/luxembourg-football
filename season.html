@@ -38,117 +38,121 @@
                         return;
                     }
 
-                    dataKeys = getAllKeys(data);
-
-                    document.getElementsByTagName("title")[0].textContent += " | " + data.season;
-                    document.getElementsByTagName("h1")[0].textContent += " : " + data.season;
-                    dataKeys = dataKeys.filter(key => key !== 'season');
-
-                    if ( data.note ) {
-                        dataKeys = dataKeys.filter(key => key !== 'note');
-                        globalNote = document.createElement("P");
-                        globalNote.textContent = "Note: " + data.note;
-                        document.body.append(globalNote);
-                    }
-
-                    navbar = document.getElementById("nav");
-                    if ( data.prev ) {
-                        dataKeys = dataKeys.filter(key => key !== 'prev');
-                        aPrev = document.createElement("A");
-                        aPrev.setAttribute("href","season.html?year="+data.prev);
-                        aPrev.textContent = data.prev;
-                        navbar.append(" | ");
-                        navbar.append(aPrev);
-                    }
-                    if ( data.next ) {
-                        dataKeys = dataKeys.filter(key => key !== 'next');
-                        aNext = document.createElement("A");
-                        aNext.setAttribute("href","season.html?year="+data.next);
-                        aNext.textContent = data.next;
-                        navbar.append(" | ");
-                        navbar.append(aNext);
-                    }
-
-                    if ( data.league ) {
-                        dataKeys = dataKeys.filter(key => key !== 'league');
-                        data.league.forEach(league=>{
-                            if ( ! league.series ) {
-                                h2 = document.createElement("H2");
-                                dataKeys = dataKeys.filter(key => key !== 'league.name');
-                                h2.textContent = league.name;
-                                dataKeys = dataKeys.filter(key => key !== 'league.level');
-                                h2.id = "league_" + league.level;
-                                document.body.append(h2);
-                            } else {
-                                dataKeys = dataKeys.filter(key => key !== 'league.series');
-                                drawSeries(league);
-                            }
-
-                            if ( league.note ) {
-                                dataKeys = dataKeys.filter(key => key !== 'league.note');
-                                note = document.createElement("P");
-                                note.textContent = "Note: " + league.note;
-                                document.body.append(note);
-                            }
-
-                            if ( league.pts_win ) {
-                                dataKeys = dataKeys.filter(key => key !== 'league.pts_win');
-                                ptswin = document.createElement("P");
-                                ptswin.textContent = "Points for a win: " + league.pts_win;
-                                document.body.append(ptswin);
-                            }
-
-                            if ( league.standings ) {
-                                dataKeys = dataKeys.filter(key => key !== 'league.standings');
-                                drawStandings(league.standings);
-                            }
-
-                            if ( league.matches ) {
-                                dataKeys = dataKeys.filter(key => key !== 'league.matches');
-                                h3 = document.createElement("H3");
-                                h3.textContent = "Matches";
-                                document.body.append(h3);
-                                drawMatchesGrid(league.matches);
-                            }
-                        });
-                    }
-
-                    if ( data.playoffs ) {
-                        dataKeys = dataKeys.filter(key => key !== 'playoffs');
-                        h2 = document.createElement("H2");
-                        h2.textContent = "Playoffs";
-                        document.body.append(h2);
-
-                        Object.entries(data.playoffs).forEach(([poName, poData])=>{
-                            h3 = document.createElement("H3");
-                            dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName));
-                            h3.textContent = playoffNames(poName);
-                            h3.id = "playoff_" + poName;
-                            document.body.append(h3);
-
-                            if ( poData.matches ) {
-                                dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.matches'));
-                                matchTable = document.createElement("TABLE");
-                                matchTabelBody = document.createElement("TBODY");
-                                matchTableHasDates = false;
-                                poData.matches.forEach(match=>{
-                                    var [createdTr,rowHasDates] = drawMatch(match,"playoffs."+poName);
-                                    matchTabelBody.append(createdTr);
-                                    matchTableHasDates = matchTableHasDates || rowHasDates;
-                                });
-                                if ( ! matchTableHasDates ) {
-                                    matchTable.classList.add("matches-no-dates");
-                                }
-                                matchTable.append(matchTabelBody);
-                                document.body.append(matchTable);
-                            }
-                        });
-                    }
-
-                    if ( dataKeys.length !== 0 ) {
-                        console.warn(dataKeys);
-                    }
+                    handleData(data);
                 });
+            
+            function handleData(data) {
+                dataKeys = getAllKeys(data);
+
+                document.getElementsByTagName("title")[0].textContent += " | " + data.season;
+                document.getElementsByTagName("h1")[0].textContent += " : " + data.season;
+                dataKeys = dataKeys.filter(key => key !== 'season');
+
+                if ( data.note ) {
+                    dataKeys = dataKeys.filter(key => key !== 'note');
+                    globalNote = document.createElement("P");
+                    globalNote.textContent = "Note: " + data.note;
+                    document.body.append(globalNote);
+                }
+
+                navbar = document.getElementById("nav");
+                if ( data.prev ) {
+                    dataKeys = dataKeys.filter(key => key !== 'prev');
+                    aPrev = document.createElement("A");
+                    aPrev.setAttribute("href","season.html?year="+data.prev);
+                    aPrev.textContent = data.prev;
+                    navbar.append(" | ");
+                    navbar.append(aPrev);
+                }
+                if ( data.next ) {
+                    dataKeys = dataKeys.filter(key => key !== 'next');
+                    aNext = document.createElement("A");
+                    aNext.setAttribute("href","season.html?year="+data.next);
+                    aNext.textContent = data.next;
+                    navbar.append(" | ");
+                    navbar.append(aNext);
+                }
+
+                if ( data.league ) {
+                    dataKeys = dataKeys.filter(key => key !== 'league');
+                    data.league.forEach(league=>{
+                        if ( ! league.series ) {
+                            h2 = document.createElement("H2");
+                            dataKeys = dataKeys.filter(key => key !== 'league.name');
+                            h2.textContent = league.name;
+                            dataKeys = dataKeys.filter(key => key !== 'league.level');
+                            h2.id = "league_" + league.level;
+                            document.body.append(h2);
+                        } else {
+                            dataKeys = dataKeys.filter(key => key !== 'league.series');
+                            drawSeries(league);
+                        }
+
+                        if ( league.note ) {
+                            dataKeys = dataKeys.filter(key => key !== 'league.note');
+                            note = document.createElement("P");
+                            note.textContent = "Note: " + league.note;
+                            document.body.append(note);
+                        }
+
+                        if ( league.pts_win ) {
+                            dataKeys = dataKeys.filter(key => key !== 'league.pts_win');
+                            ptswin = document.createElement("P");
+                            ptswin.textContent = "Points for a win: " + league.pts_win;
+                            document.body.append(ptswin);
+                        }
+
+                        if ( league.standings ) {
+                            dataKeys = dataKeys.filter(key => key !== 'league.standings');
+                            drawStandings(league.standings);
+                        }
+
+                        if ( league.matches ) {
+                            dataKeys = dataKeys.filter(key => key !== 'league.matches');
+                            h3 = document.createElement("H3");
+                            h3.textContent = "Matches";
+                            document.body.append(h3);
+                            drawMatchesGrid(league.matches);
+                        }
+                    });
+                }
+
+                if ( data.playoffs ) {
+                    dataKeys = dataKeys.filter(key => key !== 'playoffs');
+                    h2 = document.createElement("H2");
+                    h2.textContent = "Playoffs";
+                    document.body.append(h2);
+
+                    Object.entries(data.playoffs).forEach(([poName, poData])=>{
+                        h3 = document.createElement("H3");
+                        dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName));
+                        h3.textContent = playoffNames(poName);
+                        h3.id = "playoff_" + poName;
+                        document.body.append(h3);
+
+                        if ( poData.matches ) {
+                            dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.matches'));
+                            matchTable = document.createElement("TABLE");
+                            matchTabelBody = document.createElement("TBODY");
+                            matchTableHasDates = false;
+                            poData.matches.forEach(match=>{
+                                var [createdTr,rowHasDates] = drawMatch(match,"playoffs."+poName);
+                                matchTabelBody.append(createdTr);
+                                matchTableHasDates = matchTableHasDates || rowHasDates;
+                            });
+                            if ( ! matchTableHasDates ) {
+                                matchTable.classList.add("matches-no-dates");
+                            }
+                            matchTable.append(matchTabelBody);
+                            document.body.append(matchTable);
+                        }
+                    });
+                }
+
+                if ( dataKeys.length !== 0 ) {
+                    console.warn(dataKeys);
+                }
+            }
             
             function drawSeries(league) {
                 league.series.forEach(serie=>{
@@ -342,6 +346,11 @@
                         dataKeys = dataKeys.filter(key => key !== prefix + '.standings.champion');
                         tbody_tr.classList.add("is-champion");
                         rowNotes.push("Champion");
+                    }
+                    if ( row.promoted ) {
+                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.promoted');
+                        tbody_tr.classList.add("is-promoted");
+                        rowNotes.push("Promoted");
                     }
 
                     if ( row.playoff ) {
