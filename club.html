@@ -36,7 +36,7 @@
                 document.getElementsByTagName("title")[0].textContent += " | " + data.name;
                 document.getElementsByTagName("h1")[0].textContent += " : " + data.name;
                 dataKeys = dataKeys.filter(key => key !== 'name');
-                allTeams[data.code] = data.name;
+                allTeams[data.code] = {name:data.name};
                 dataKeys = dataKeys.filter(key => key !== 'code');
 
                 if ( data.league ) {
