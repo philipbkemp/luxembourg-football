@@ -60,14 +60,14 @@
                 
                 thead = document.createElement("THEAD");
                 thead_tr = document.createElement("TR");
-
-                th_league = document.createElement("TH");
-                th_league.textContent = "League";
-                thead_tr.append(th_league);
                 
                 th_place = document.createElement("TH");
                 th_place.textContent = "#";
                 thead_tr.append(th_place);
+
+                th_league = document.createElement("TH");
+                th_league.textContent = "League";
+                thead_tr.append(th_league);
 
                 stats = [
                     ["P","Played"],
@@ -100,16 +100,16 @@
                 standingsData.forEach(row=>{
                     tbody_tr = document.createElement("TR");
 
+                    tr_place = document.createElement("TD");
+                    tr_place.textContent = row.place;
+                    dataKeys = dataKeys.filter(key => key !== 'league.place');
+                    tbody_tr.append(tr_place);
+
                     tr_league = document.createElement("TD");
                     tr_league.textContent = row.league;
                     tr_league.classList.add("league-name");
                     dataKeys = dataKeys.filter(key => key !== 'league.league');
                     tbody_tr.append(tr_league);
-
-                    tr_place = document.createElement("TD");
-                    tr_place.textContent = row.place;
-                    dataKeys = dataKeys.filter(key => key !== 'league.place');
-                    tbody_tr.append(tr_place);
 
                     if ( ! row.missing ) {
                         td_stat = document.createElement("TD");
