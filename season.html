@@ -385,6 +385,11 @@
                         rowNotes.push( playoffLink.outerHTML );
                     }
 
+                    if ( row.note ) {
+                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.note');
+                        rowNotes.push(row.note);
+                    }
+
                     tr_notes = document.createElement("TD");
                     if ( rowNotes.length !== 0 ) {
                         tr_notes.innerHTML = rowNotes.join("; ");
