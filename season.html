@@ -415,6 +415,12 @@
                 table.append(tbody);
 
                 document.body.append(table);
+
+                // ignore the properties used to copy standings to club pages
+                dataKeys = dataKeys.filter(key => key !== prefix + '.standings.league');
+                dataKeys = dataKeys.filter(key => key !== prefix + '.standings.level');
+                dataKeys = dataKeys.filter(key => key !== prefix + '.standings.season');
+                dataKeys = dataKeys.filter(key => key !== prefix + '.standings.series');
             }
 
             function drawMatchesGrid(matches,prefix="league") {
