@@ -54,7 +54,7 @@
                 }
             }
 
-            function drawStandings(standingsData,prefix="league") {
+            function drawStandings(standingsData) {
                 table = document.createElement("TABLE");
                 hasNotes = false;
                 
@@ -102,13 +102,13 @@
 
                     tr_place = document.createElement("TD");
                     tr_place.textContent = row.place;
-                    dataKeys = dataKeys.filter(key => key !== prefix + '.standings.place');
+                    dataKeys = dataKeys.filter(key => key !== 'league.place');
                     tbody_tr.append(tr_place);
 
                     tr_team = document.createElement("TD");
                     tr_team.textContent = allTeams[row.team].name;
                     tr_team.classList.add("team-name");
-                    dataKeys = dataKeys.filter(key => key !== prefix + '.standings.team');
+                    dataKeys = dataKeys.filter(key => key !== 'league.team');
                     tbody_tr.append(tr_team);
 
                     if ( ! row.missing ) {
@@ -120,17 +120,17 @@
                             td_stat = document.createElement("TD");
                             td_stat.textContent = row[s];
                             tbody_tr.append(td_stat);
-                            dataKeys = dataKeys.filter(key => key !== prefix + '.standings.'+s);
+                            dataKeys = dataKeys.filter(key => key !== 'league.'+s);
                         });
                         td_stat = document.createElement("TD");
                         td_stat.textContent = (row.w*row.pts_win) + row.d;
                         tbody_tr.append(td_stat);
-                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.pts_win');
+                        dataKeys = dataKeys.filter(key => key !== 'league.pts_win');
                         td_stat = document.createElement("TD");
                         td_stat.textContent = row.f - row.a;
                         tbody_tr.append(td_stat);
                     } else {
-                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.missing');
+                        dataKeys = dataKeys.filter(key => key !== 'league.missing');
                         td_stats = document.createElement("TD");
                         td_stats.textContent = "Missing data";
                         td_stats.setAttribute("colspan",8);
@@ -140,28 +140,28 @@
                     rowNotes = [];
 
                     if ( row.champion ) {
-                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.champion');
+                        dataKeys = dataKeys.filter(key => key !== 'league.champion');
                         tbody_tr.classList.add("is-champion");
                         rowNotes.push("Champion");
                     }
                     if ( row.promoted ) {
-                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.promoted');
+                        dataKeys = dataKeys.filter(key => key !== 'league.promoted');
                         tbody_tr.classList.add("is-promoted");
                         rowNotes.push("Promoted");
                     }
                     if ( row.relegated ) {
-                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.relegated');
+                        dataKeys = dataKeys.filter(key => key !== 'league.relegated');
                         tbody_tr.classList.add("is-relegated");
                         rowNotes.push("Relegated");
                     }
                     if ( row.removed ) {
-                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.removed');
+                        dataKeys = dataKeys.filter(key => key !== 'league.removed');
                         tbody_tr.classList.add("is-removed");
                         rowNotes.push("Removed");
                     }
 
                     if ( row.playoff ) {
-                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.playoff');
+                        dataKeys = dataKeys.filter(key => key !== 'league.playoff');
                         playoffLink = document.createElement("A");
                         playoffLink.setAttribute("href","#playoff_"+row.playoff);
                         playoffLink.textContent = playoffNames(row.playoff);
@@ -169,7 +169,7 @@
                     }
 
                     if ( row.note ) {
-                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.note');
+                        dataKeys = dataKeys.filter(key => key !== 'league.note');
                         rowNotes.push(row.note);
                     }
 
