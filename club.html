@@ -14,18 +14,27 @@
             fetch("clubs/"+team.toLowerCase()+".json")
                 .then(response => {
                     if ( ! response.ok ) {
-                        throw new Error("Failed to load JSON");
+                        errorP = document.createElement("P");
+                        errorP.classList.add("error");
+                        errorP.textContent = "Club not found";
+                        document.body.append(errorP);
+                        return {"invalid":true};
                     }
                     return response.json()
                 })
                 .then(data => {
-                    document.getElementsByTagName("title")[0].textContent += " | " + data.name;
-                    document.getElementsByTagName("h1")[0].textContent += " : " + data.name;
-                    console.log(data);
+                    if ( data.invalid ) {
+                        return;
+                    }
+
+                    handleData(data);
                 })
-                .catch(error => {
-                    console.error(error.message);
-                });
+            
+            function handleData(data) {
+                document.getElementsByTagName("title")[0].textContent += " | " + data.name;
+                document.getElementsByTagName("h1")[0].textContent += " : " + data.name;
+                console.log(data);
+            }
         </script>
     </body>
 </html>
