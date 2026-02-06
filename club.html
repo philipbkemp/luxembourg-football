@@ -34,12 +34,12 @@
                 dataKeys = getAllKeys(data);
                 document.getElementsByTagName("title")[0].textContent += " | " + data.name;
                 document.getElementsByTagName("h1")[0].textContent += " : " + data.name;
-                dataKeys = dataKeys.filter(key => key !== prefix + 'name');
-                dataKeys = dataKeys.filter(key => key !== prefix + 'code');
+                dataKeys = dataKeys.filter(key => key !== 'name');
+                dataKeys = dataKeys.filter(key => key !== 'code');
 
                 if ( data.league ) {
                     drawStandings(data.league);
-                    dataKeys = dataKeys.filter(key => key !== prefix + 'league');
+                    dataKeys = dataKeys.filter(key => key !== 'league');
                 }
 
                 if ( dataKeys.length !== 0 ) {
