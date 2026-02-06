@@ -69,10 +69,6 @@
                 th_league = document.createElement("TH");
                 th_league.textContent = "League";
                 thead_tr.append(th_league);
-                
-                th_place = document.createElement("TH");
-                th_place.textContent = "#";
-                thead_tr.append(th_place);
 
                 stats = [
                     ["P","Played"],
@@ -108,7 +104,8 @@
                     for ( i=0 ; i<6 ; i++ ) {
                         td_level = document.createElement("TD");
                         if ( row.level === (i+1) ) {
-                            td_level.textContent = "x";
+                            td_level.textContent = nth(row.place);
+                            dataKeys = dataKeys.filter(key => key !== 'league.place');
                         } else {
                             td_level.textContent = "";
                         }
@@ -121,11 +118,6 @@
                     tr_league.classList.add("league-name");
                     dataKeys = dataKeys.filter(key => key !== 'league.league');
                     tbody_tr.append(tr_league);
-
-                    tr_place = document.createElement("TD");
-                    tr_place.textContent = nth(row.place);
-                    dataKeys = dataKeys.filter(key => key !== 'league.place');
-                    tbody_tr.append(tr_place);
 
                     if ( ! row.missing ) {
                         td_stat = document.createElement("TD");
