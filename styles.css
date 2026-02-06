@@ -47,6 +47,9 @@ table tbody tr td.match-home {
 table tbody tr td.match-score {
     width: 75px;
 }
+table.matches-no-dates tr :first-child {
+    display: none;
+}
 h2 {
     border-top: 1px solid #999999;
     padding-top: 10px;

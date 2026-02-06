@@ -134,8 +134,13 @@
                                 matchTable = document.createElement("TABLE");
                                 matchTabelBody = document.createElement("TBODY");
                                 poData.matches.forEach(match=>{
-                                    matchTabelBody.append( drawMatch(match,"playoffs."+poName));
+                                    var [createdTr,rowHasDates] = drawMatch(match,"playoffs."+poName);
+                                    matchTabelBody.append(createdTr);
+                                    matchTableHasDates = matchTableHasDates || rowHasDates;
                                 });
+                                if ( matchTableHasDates ) {
+                                    matchTable.classList.add("matches-no-dates");
+                                }
                                 matchTable.append(matchTabelBody);
                                 document.body.append(matchTable);
                             }
@@ -182,9 +187,11 @@
 
             function drawMatch(matchData,keyPrefix) {
                 match_tr = document.createElement("TR");
+                hasDates = false;
 
                 td_date = document.createElement("TD");
                 if ( matchData.date ) {
+                    hasDates = true;
                     td_date.textContent = matchData.date;
                     td_date.classList.add("match-date");
                     dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.date'));
@@ -232,7 +239,7 @@
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.outcome'));
                 match_tr.append(td_outcome);
 
-                return match_tr;
+                return [match_tr,hasDates];
             }
 
             function playoffNames(poName) {
