@@ -44,6 +44,9 @@ tr.is-champion {
 tr.is-promoted {
     background: #9acd32;
 }
+tr.is-relegated {
+    background: #e19284;
+}
 table tbody tr td.match-home {
     text-align: right;
 }

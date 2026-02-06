@@ -352,6 +352,11 @@
                         tbody_tr.classList.add("is-promoted");
                         rowNotes.push("Promoted");
                     }
+                    if ( row.relegated ) {
+                        dataKeys = dataKeys.filter(key => key !== prefix + '.standings.relegated');
+                        tbody_tr.classList.add("is-relegated");
+                        rowNotes.push("Relegated");
+                    }
 
                     if ( row.playoff ) {
                         dataKeys = dataKeys.filter(key => key !== prefix + '.standings.playoff');
