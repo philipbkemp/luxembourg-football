@@ -40,6 +40,11 @@
                 dataKeys = dataKeys.filter(key => key !== 'code');
 
                 if ( data.league ) {
+                    h2 = document.createElement("H2");
+                    h2.textContent = "League history";
+                    h2.id = "league";
+                    document.body.append(h2);
+
                     drawStandings(data.league);
                     dataKeys = dataKeys.filter(key => key !== 'league');
                 }
