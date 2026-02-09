@@ -538,25 +538,28 @@
                 
                 statsUL = document.createElement("UL");
                 statsLI = document.createElement("LI");
+                statsLI.textContent = "Biggest home win: ";
                 if ( recordHomeWin.length === 1 ) {
                     record = recordHomeWin[0];
-                    statsLI.textContent = record.home + " " + record.score + " " + record.away;
+                    statsLI.textContent = statsLI.textContent + allTeams[record.home].name + " " + record.score + " " + allTeams[record.away].name;
                 } else {
                     console.log(recordHomeWinMargin,recordHomeWin);
                 }
                 statsUL.append(statsLI);
                 statsLI = document.createElement("LI");
+                statsLI.textContent = "Biggest away win: ";
                 if ( recordAwayWin.length === 1 ) {
                     record = recordAwayWin[0];
-                    statsLI.textContent = record.home + " " + record.score + " " + record.away;
+                    statsLI.textContent = statsLI.textContent + allTeams[record.home].name + " " + record.score + " " + allTeams[record.away].name;
                 } else {
                     console.log(recordAwayWinMargin,recordAwayWin);
                 }
                 statsUL.append(statsLI);
                 statsLI = document.createElement("LI");
+                statsLI.textContent = "Highest scoring game: ";
                 if ( recordHighestScoring.length === 1 ) {
                     record = recordHighestScoring[0];
-                    statsLI.textContent = record.home + " " + record.score + " " + record.away;
+                    statsLI.textContent = statsLI.textContent + allTeams[record.home].name + " " + record.score + " " + allTeams[record.away].name;
                 } else {
                     console.log(recordHighestScoringGoals,recordHighestScoring);
                 }
