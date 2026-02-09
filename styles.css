@@ -7,7 +7,8 @@ body {
 a {
     color: blue !important;
 }
-a[href^='#'] {
+a[href^='#'],
+h1 a {
     color: darkblue !important;
     text-underline-offset: 3px;
 }
