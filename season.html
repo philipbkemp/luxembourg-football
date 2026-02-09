@@ -439,6 +439,14 @@
             function drawMatchesGrid(matches,prefix="league") {
                 matchGrid = {};
                 matchGridNotes = [];
+
+                recordHomeWin = [];
+                recordHomeWinMargin = 0;
+                recordAwayWin = [];
+                recordAwayWinMargin = 0;
+                recordHighestScoring = [];
+                recordHighestScoringGoals = 0;
+
                 matches.forEach(m=>{
                     if ( ! Object.keys(matchGrid).includes(m.home) ) {
                         matchGrid[m.home] = {};
@@ -454,6 +462,35 @@
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.home'));
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.away'));
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.score'));
+
+                    /* statistics */
+                    scoreParts = matchData.score.split("-");
+                    homeScore = parseInt(scoreParts[0]);
+                    awayScore = parseInt(scoreParts[1]);
+                    totalGoals = homeScore + awayScore;
+                    if ( totalGoals === recordHighestScoringGoals ) {
+                        recordHighestScoring.push(m);
+                    } else if ( totalGoals > recordHighestScoringGoals ) {
+                        recordHighestScoring = [m];
+                        recordHighestScoringGoals = totalGoals;
+                    }
+                    if ( homeScore > awayScore ) {
+                        margin = homeScore - awayScore;
+                        if ( margin === recordHomeWinMargin ) {
+                            recordHomeWin.push(m);
+                        } else if ( margin > recordHomeWinMargin ) {
+                            recordHomeWinMargin = margin;
+                            recordHomeWin = [m];
+                        }
+                    } else if ( awayScore > homeScore ) {
+                        margin = awayScore - homeScore;
+                        if ( margin === recordAwayWinMargin ) {
+                            recordAwayWin.push(m);
+                        } else if ( margin > recordAwayWinMargin ) {
+                            recordAwayWinMargin = margin;
+                            recordAwayWin = [m];
+                        }
+                    }
                 });
                 
                 teams = Object.keys(matchGrid).sort();
@@ -498,6 +535,10 @@
                     noteP.textContent = note;
                     document.body.append(noteP);
                 });
+
+                console.log(recordHighestScoringGoals,recordHighestScoring);
+                console.log(recordHomeWinMargin,recordHomeWin);
+                console.log(recordAwayWinMargin,recordAwayWin);
             }
 
             function getAllKeys(obj, prefix = '') {
