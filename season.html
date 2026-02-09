@@ -464,7 +464,7 @@
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.score'));
 
                     /* statistics */
-                    scoreParts = matchData.score.split("-");
+                    scoreParts = m.score.split("-");
                     homeScore = parseInt(scoreParts[0]);
                     awayScore = parseInt(scoreParts[1]);
                     totalGoals = homeScore + awayScore;
