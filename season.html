@@ -73,7 +73,9 @@
                     aPrev = document.createElement("A");
                     aPrev.setAttribute("href","season.html?year="+data.prev);
                     aPrev.textContent = data.prev;
-                    navbar.append(" | ");
+                    if ( navbar.textContent !== "" ) {
+                        navbar.append(" | ");
+                    }
                     navbar.append(aPrev);
                 }
                 if ( data.next ) {
@@ -81,7 +83,9 @@
                     aNext = document.createElement("A");
                     aNext.setAttribute("href","season.html?year="+data.next);
                     aNext.textContent = data.next;
-                    navbar.append(" | ");
+                    if ( navbar.textContent !== "" ) {
+                        navbar.append(" | ");
+                    }
                     navbar.append(aNext);
                 }
 
