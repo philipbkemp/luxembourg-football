@@ -535,10 +535,33 @@
                     noteP.textContent = note;
                     document.body.append(noteP);
                 });
-
-                console.log(recordHighestScoringGoals,recordHighestScoring);
-                console.log(recordHomeWinMargin,recordHomeWin);
-                console.log(recordAwayWinMargin,recordAwayWin);
+                
+                statsUL = document.createElement("UL");
+                statsLI = document.createElement("LI");
+                if ( recordHomeWin.length === 1 ) {
+                    record = recordHomeWin[0];
+                    statsLI.textContent = record.home + " " + record.score + " " + record.away;
+                } else {
+                    console.log(recordHomeWinMargin,recordHomeWin);
+                }
+                statsUL.append(statsUL);
+                statsLI = document.createElement("LI");
+                if ( recordAwayWin.length === 1 ) {
+                    record = recordAwayWin[0];
+                    statsLI.textContent = record.home + " " + record.score + " " + record.away;
+                } else {
+                    console.log(recordAwayWinMargin,recordAwayWin);
+                }
+                statsUL.append(statsUL);
+                statsLI = document.createElement("LI");
+                if ( recordHighestScoring.length === 1 ) {
+                    record = recordHighestScoring[0];
+                    statsLI.textContent = record.home + " " + record.score + " " + record.away;
+                } else {
+                    console.log(recordHighestScoringGoals,recordHighestScoring);
+                }
+                statsUL.append(statsUL);
+                document.body.append(statsUL);
             }
 
             function getAllKeys(obj, prefix = '') {
