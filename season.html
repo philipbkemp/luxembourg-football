@@ -544,7 +544,7 @@
                 } else {
                     console.log(recordHomeWinMargin,recordHomeWin);
                 }
-                statsUL.append(statsUL);
+                statsUL.append(statsLI);
                 statsLI = document.createElement("LI");
                 if ( recordAwayWin.length === 1 ) {
                     record = recordAwayWin[0];
@@ -552,7 +552,7 @@
                 } else {
                     console.log(recordAwayWinMargin,recordAwayWin);
                 }
-                statsUL.append(statsUL);
+                statsUL.append(statsLI);
                 statsLI = document.createElement("LI");
                 if ( recordHighestScoring.length === 1 ) {
                     record = recordHighestScoring[0];
@@ -560,7 +560,7 @@
                 } else {
                     console.log(recordHighestScoringGoals,recordHighestScoring);
                 }
-                statsUL.append(statsUL);
+                statsUL.append(statsLI);
                 document.body.append(statsUL);
             }
 
