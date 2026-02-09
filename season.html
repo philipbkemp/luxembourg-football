@@ -553,7 +553,7 @@
                 }
                 statsUL.append(statsLI);
                 statsLI = document.createElement("LI");
-                statsLI.textContent = "Biggest away win    : ";
+                statsLI.innerHTML = "Biggest away win&nbsp;&nbsp;&nbsp;&nbsp;: ";
                 if ( recordAwayWin.length === 1 ) {
                     record = recordAwayWin[0];
                     statsLI.textContent = statsLI.textContent + allTeams[record.home].name + " " + record.score + " " + allTeams[record.away].name;
@@ -568,7 +568,7 @@
                 }
                 statsUL.append(statsLI);
                 statsLI = document.createElement("LI");
-                statsLI.textContent = "Highest scoring game: ";
+                statsLI.innerHTML = "Biggest home win&nbsp;&nbsp;&nbsp;&nbsp;: ";
                 if ( recordHighestScoring.length === 1 ) {
                     record = recordHighestScoring[0];
                     statsLI.textContent = statsLI.textContent + allTeams[record.home].name + " " + record.score + " " + allTeams[record.away].name;
