@@ -538,7 +538,7 @@
                 
                 statsUL = document.createElement("UL");
                 statsLI = document.createElement("LI");
-                statsLI.textContent = "Biggest home win    : ";
+                statsLI.textContent = "Biggest home win&nbsp;&nbsp;&nbsp;&nbsp;: ";
                 if ( recordHomeWin.length === 1 ) {
                     record = recordHomeWin[0];
                     statsLI.textContent = statsLI.textContent + allTeams[record.home].name + " " + record.score + " " + allTeams[record.away].name;
@@ -568,7 +568,7 @@
                 }
                 statsUL.append(statsLI);
                 statsLI = document.createElement("LI");
-                statsLI.innerHTML = "Biggest home win&nbsp;&nbsp;&nbsp;&nbsp;: ";
+                statsLI.innerHTML = "Highest scoring game: ";
                 if ( recordHighestScoring.length === 1 ) {
                     record = recordHighestScoring[0];
                     statsLI.textContent = statsLI.textContent + allTeams[record.home].name + " " + record.score + " " + allTeams[record.away].name;
