@@ -538,7 +538,7 @@
                 
                 statsUL = document.createElement("UL");
                 statsLI = document.createElement("LI");
-                statsLI.textContent = "Biggest home win&nbsp;&nbsp;&nbsp;&nbsp;: ";
+                statsLI.innerHTML = "Biggest home win&nbsp;&nbsp;&nbsp;&nbsp;: ";
                 if ( recordHomeWin.length === 1 ) {
                     record = recordHomeWin[0];
                     statsLI.textContent = statsLI.textContent + allTeams[record.home].name + " " + record.score + " " + allTeams[record.away].name;
