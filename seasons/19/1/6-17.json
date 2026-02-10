@@ -85,7 +85,7 @@
     "playoffs": {
         "promotion_3": {
             "matches": [
-                {"home":"URUM","away":"AVBG","score":"6-2","outcome":"URUM promoted", "seasons": "1916-17", "playoff": "promotion_3"}
+                {"home":"URUM","away":"AVBG","score":"6-2","outcome":"URUM promoted", "season": "1916-17", "playoff": "promotion_3"}
             ]
         }
     }
