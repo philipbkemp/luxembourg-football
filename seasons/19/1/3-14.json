@@ -6,12 +6,12 @@
         "level": 1,
         "name": "1. Division",
         "standings": [
-            {"place":1, "team": "HLBN", "missing": true, "champion": true},
-            {"place":2, "team": "SCLX", "missing": true},
-            {"place":3, "team": "RACL", "missing": true},
-            {"place":4, "team": "SDIF", "missing": true},
-            {"place":5, "team": "JESH", "missing": true},
-            {"place":6, "team": "CPET", "missing": true}
+            {"place":1, "team": "HLBN", "missing": true, "season": "1913-14", "level":1, "league":"1. Division", "champion": true},
+            {"place":2, "team": "SCLX", "missing": true, "season": "1913-14", "level":1, "league":"1. Division"},
+            {"place":3, "team": "RACL", "missing": true, "season": "1913-14", "level":1, "league":"1. Division"},
+            {"place":4, "team": "SDIF", "missing": true, "season": "1913-14", "level":1, "league":"1. Division"},
+            {"place":5, "team": "JESH", "missing": true, "season": "1913-14", "level":1, "league":"1. Division"},
+            {"place":6, "team": "CPET", "missing": true, "season": "1913-14", "level":1, "league":"1. Division"}
         ]
     }]
 }

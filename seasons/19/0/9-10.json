@@ -5,22 +5,22 @@
         "level": 1,
         "name": "Klasse A",
         "standings": [
-            {"place":1, "team": "RACL", "missing": true, "playoff": "title", "champion": true},
-            {"place":2, "team": "HLBN", "missing": true, "playoff": "title"},
-            {"place":3, "team": "SCLX", "missing": true},
-            {"place":4, "team": "JESH", "missing": true},
-            {"place":5, "team": "URUM", "missing": true},
-            {"place":6, "team": "JECT", "missing": true},
-            {"place":7, "team": "CROD", "missing": true},
-            {"place":8, "team": "NESH", "missing": true},
-            {"place":9, "team": "GDUD", "missing": true}
+            {"place":1, "team": "RACL", "missing": true, "season": "1909-10", "level":1, "league":"Klasse A", "playoff": "title", "champion": true},
+            {"place":2, "team": "HLBN", "missing": true, "season": "1909-10", "level":1, "league":"Klasse A", "playoff": "title"},
+            {"place":3, "team": "SCLX", "missing": true, "season": "1909-10", "level":1, "league":"Klasse A"},
+            {"place":4, "team": "JESH", "missing": true, "season": "1909-10", "level":1, "league":"Klasse A"},
+            {"place":5, "team": "URUM", "missing": true, "season": "1909-10", "level":1, "league":"Klasse A"},
+            {"place":6, "team": "JECT", "missing": true, "season": "1909-10", "level":1, "league":"Klasse A"},
+            {"place":7, "team": "CROD", "missing": true, "season": "1909-10", "level":1, "league":"Klasse A"},
+            {"place":8, "team": "NESH", "missing": true, "season": "1909-10", "level":1, "league":"Klasse A"},
+            {"place":9, "team": "GDUD", "missing": true, "season": "1909-10", "level":1, "league":"Klasse A"}
         ],
         "note": "Full data not available"
     }],
     "playoffs": {
         "title": {
             "matches": [
-                {"date": "1910-05-06", "home":"RACL", "away":"HLBN", "score":"3-2", "outcome": "RACL champions"}
+                {"date": "1910-05-06", "home":"RACL", "away":"HLBN", "score":"3-2", "outcome": "RACL champions", "season": "1909-10", "playoff": "title"}
             ]
         }
     }
