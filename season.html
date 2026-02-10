@@ -128,7 +128,7 @@
                             h3 = document.createElement("H3");
                             h3.textContent = "Matches";
                             document.body.append(h3);
-                            drawMatchesGrid(league.matches);
+                            drawMatchesGrid(league.matches,"league.matches");
                         }
                     });
                 }
@@ -496,6 +496,10 @@
                             recordAwayWin = [m];
                         }
                     }
+
+                    dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.league'));
+                    dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.season'));
+                    dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.level'));
                 });
                 
                 teams = Object.keys(matchGrid).sort();
