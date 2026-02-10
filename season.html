@@ -273,6 +273,11 @@
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.outcome'));
                 match_tr.append(td_outcome);
 
+                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.playoff'));
+                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.season'));
+                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.level'));
+                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.league'));
+
                 return [match_tr,hasDates];
             }
 
