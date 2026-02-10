@@ -501,6 +501,7 @@
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.league'));
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.season'));
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.level'));
+                    dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.series'));
                 });
                 
                 teams = Object.keys(matchGrid).sort();
