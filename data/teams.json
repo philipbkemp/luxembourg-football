@@ -48,8 +48,7 @@
         "name": "Alisontia Steinsel"
     },
     "ATBS": {
-        "name": "Atert Bissen",
-        "level": 1
+        "name": "Atert Bissen"
     },
     "AVBG": {
         "name": "Avenir Beggen"
@@ -164,8 +163,7 @@
         "name": "Daring Club Eich"
     },
     "DIFF": {
-        "name": "Differdange 03",
-        "level": 1
+        "name": "Differdange 03"
     },
     "DONC": {
         "name": "FC Doncols"
@@ -183,8 +181,7 @@
         "name": "Egalité Weimerskirch"
     },
     "EHLR": {
-        "name": "FC Ehlerange",
-        "level": 4
+        "name": "FC Ehlerange"
     },
     "EITZ": {
         "name": "Excelsior Itzig"
@@ -214,12 +211,10 @@
         "name": "Union Ardennes Eschweiler/Wiltz"
     },
     "EXGV": {
-        "name": "Excelsior Grevels",
-        "level": 5
+        "name": "Excelsior Grevels"
     },
     "F91D": {
-        "name": "F91 Dudelange",
-        "level": 1
+        "name": "F91 Dudelange"
     },
     "FBU1": {
         "name": "Flaxweiler/Beyren Udinesina 01"
@@ -240,8 +235,7 @@
         "name": "FC Ell"
     },
     "FOLA": {
-        "name": "Fola Esch",
-        "level": 2
+        "name": "Fola Esch"
     },
     "FOLS": {
         "name": "US Folschette"
@@ -313,8 +307,7 @@
         "name": "Jeunesse Bettembourg"
     },
     "JBIW": {
-        "name": "Jeunesse Biwer",
-        "level": 4
+        "name": "Jeunesse Biwer"
     },
     "JCNC": {
         "name": "Jeunesse Canach"
@@ -377,8 +370,7 @@
         "name": "Jeunesse Steinfort"
     },
     "JUNG": {
-        "name": "Jeunesse Junglinster",
-        "level": 3
+        "name": "Jeunesse Junglinster"
     },
     "JUSE": {
         "name": "Jeunesse Useldange"
@@ -480,8 +472,7 @@
         "name": "National Esch"
     },
     "NORD": {
-        "name": "FF Norden 02",
-        "level": 3
+        "name": "FF Norden 02"
     },
     "NORZ": {
         "name": "FC Noertzange HF"
@@ -604,8 +595,7 @@
         "name": "SC Bettembourg"
     },
     "SCHF": {
-        "name": "Schifflange 95",
-        "level": 2
+        "name": "Schifflange 95"
     },
     "SCHR": {
         "name": "FC Schieren"
@@ -620,8 +610,7 @@
         "name": "Stade Dudelange"
     },
     "SELL": {
-        "name": "SC Ell",
-        "level": 4
+        "name": "SC Ell"
     },
     "SGRV": {
         "name": "Stade Mosellan Grevenmacher"
@@ -693,8 +682,7 @@
         "name": "US Eschdorf"
     },
     "UESH": {
-        "name": "US Esch",
-        "level": 5
+        "name": "US Esch"
     },
     "UFLN": {
         "name": "US Feulen"
@@ -769,8 +757,7 @@
         "name": "Young Boys Schweicherthal"
     },
     "YBWT": {
-        "name": "Yellow Boys Weiler-la-Tour",
-        "level": 3
+        "name": "Yellow Boys Weiler-la-Tour"
     },
     "YGGC": {
         "name": "Yougo Grund-Cessange"
