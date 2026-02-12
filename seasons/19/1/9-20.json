@@ -112,7 +112,7 @@
             "matches": [
                 {"home":"TRIM","away":"STET","score":"1-0","season":"1919-20","playoff":"promotion_3"},
                 {"home":"TRIM","away":"PRON","score":"6-1","season":"1919-20","playoff":"promotion_3"},
-                {"home":"PRON","away":"STET","score":"P-P","season":"1919-20","playoff":"promotion_3"}
+                {"home":"PRON","away":"STET","score":"P-P","season":"1919-20","playoff":"promotion_3","note":"Match not played as TRIM already won promotion"}
             ],
             "loadTeams": ["TRIM"],
             "note": "TRIM promoted"
