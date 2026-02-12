@@ -162,6 +162,17 @@
                             matchTable.append(matchTabelBody);
                             document.body.append(matchTable);
                         }
+
+                        if ( poData.note ) {
+                            dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.note'));
+                            note = document.createElement("P");
+                            note.textContent = poData.note
+                                .replace(matchData.home,allTeams[matchData.home].name)
+                                .replace(matchData.away,allTeams[matchData.away].name)
+                                ;
+                            document.body.append(note);
+
+                        }
                     });
                 }
 
