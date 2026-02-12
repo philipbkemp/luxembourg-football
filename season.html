@@ -281,16 +281,22 @@
 
                 td_outcome = document.createElement("TD");
                 if ( matchData.outcome ) {
+                    dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.outcome'));
                     td_outcome.innerHTML = matchData.outcome
                         .replace(matchData.home,allTeams[matchData.home].name)
                         .replace(matchData.away,allTeams[matchData.away].name)
                         .replace("|","<br/>")
                         ;
+                } else if ( matchData.note ) {
+                    dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.note'));
+                    td_outcome.textContent = matchData.note
+                        .replace(matchData.home,allTeams[matchData.home].name)
+                        .replace(matchData.away,allTeams[matchData.away].name)
+                        ;
                 } else {
                     td_outcome.textContent = "";
                 }
                 td_outcome.classList.add("team-notes");
-                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.outcome'));
                 match_tr.append(td_outcome);
 
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.playoff'));
