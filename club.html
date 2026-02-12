@@ -111,6 +111,41 @@
                 });
 
                 console.log(opponents);
+
+                table = document.createElement("TABLE");                
+                thead = document.createElement("THEAD");
+                thead_tr = document.createElement("TR");
+                th_opp = document.createElement("TH");
+                th_opp.textContent = "Opponent";
+                thead_tr.append(th_opp);
+                stats = [
+                    ["P","Played"],
+                    ["W","Won"],
+                    ["D","Draw"],
+                    ["L","Lost"],
+                    ["F","Goals For"],
+                    ["A","Goals Against"],
+                    ["Pts","Points"],
+                    ["GD","Goal Difference"]
+                ];
+                stats.forEach(s=>{
+                    th_stat = document.createElement("TH");
+                    th_stat_abbr = document.createElement("ABBR");
+                    th_stat_abbr.textContent = s[0];
+                    th_stat_abbr.title = s[1];
+                    th_stat.append(th_stat_abbr);
+                    thead_tr.append(th_stat);
+                });
+                thead.append(thead_tr);
+                table.append(thead);
+                tbody = document.createElement("TBODY");
+                
+                Object.keys(opponents).forEach(key => {
+                    tbody_tr = document.createElement("TR");
+                    tbody.append(tbody_tr);
+                });
+                table.append(tbody);
+                document.body.append(table);
             }
 
             function drawStandings(standingsData) {
