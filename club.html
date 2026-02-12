@@ -59,7 +59,7 @@
                     document.body.append(h2);
 
                     drawMatches(data.matches);
-                    dataKeys = dataKeys.filter(key => key !== 'league');
+                    dataKeys = dataKeys.filter(key => key !== 'matches');
                 }
 
                 if ( dataKeys.length !== 0 ) {
@@ -142,6 +142,11 @@
                 
                 Object.keys(opponents).forEach(key => {
                     tbody_tr = document.createElement("TR");
+
+                    td_opp = document.createElement("TD");
+                    td_opp.textContent = key;
+                    tbody_tr.append(td_opp);
+
                     tbody.append(tbody_tr);
                 });
                 table.append(tbody);
