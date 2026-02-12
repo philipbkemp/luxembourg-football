@@ -147,6 +147,12 @@
                         h3.id = "playoff_" + poName;
                         document.body.append(h3);
 
+                        poTeams = {};
+                        if ( poData.loadTeams ) {
+                            poTeams = poData.loadTeams;
+                            dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.loadTeams'));
+                        }
+
                         if ( poData.matches ) {
                             dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.matches'));
                             matchTable = document.createElement("TABLE");
@@ -167,10 +173,11 @@
                         if ( poData.note ) {
                             dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.note'));
                             note = document.createElement("P");
-                            note.textContent = poData.note
-                                .replace(matchData.home,allTeams[matchData.home].name)
-                                .replace(matchData.away,allTeams[matchData.away].name)
-                                ;
+                            poNote = poData.note;
+                            Object.keys(poTeams).forEach(key => {
+                                poNote = poNote.replace(key,allTeams[key].name);
+                            });
+                            note.textContent = poNote;
                             document.body.append(note);
 
                         }
