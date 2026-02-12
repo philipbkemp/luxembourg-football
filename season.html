@@ -174,7 +174,7 @@
                             dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.note'));
                             note = document.createElement("P");
                             poNote = poData.note;
-                            Object.keys(poTeams).forEach(key => {
+                            poTeams.forEach(key => {
                                 poNote = poNote.replace(key,allTeams[key].name);
                             });
                             note.textContent = poNote;
