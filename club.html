@@ -115,12 +115,12 @@
                         opponents[opponent][4] += goalsAgainstTeam;
                     }
 
-                    dataKeys = dataKeys.filter(key => key !== 'home');
-                    dataKeys = dataKeys.filter(key => key !== 'away');
-                    dataKeys = dataKeys.filter(key => key !== 'score');
-                    dataKeys = dataKeys.filter(key => key !== 'outcome');
-                    dataKeys = dataKeys.filter(key => key !== 'playoff');
-                    dataKeys = dataKeys.filter(key => key !== 'season');
+                    dataKeys = dataKeys.filter(key => key !== 'matches.home');
+                    dataKeys = dataKeys.filter(key => key !== 'matches.away');
+                    dataKeys = dataKeys.filter(key => key !== 'matches.score');
+                    dataKeys = dataKeys.filter(key => key !== 'matches.outcome');
+                    dataKeys = dataKeys.filter(key => key !== 'matches.playoff');
+                    dataKeys = dataKeys.filter(key => key !== 'matches.season');
                 });
 
                 table = document.createElement("TABLE");                
