@@ -52,9 +52,65 @@
                     dataKeys = dataKeys.filter(key => key !== 'league');
                 }
 
+                if ( data.matches ) {
+                    h2 = document.createElement("H2");
+                    h2.textContent = "Matches";
+                    h2.id = "matches";
+                    document.body.append(h2);
+
+                    drawMatches(data.matches);
+                    dataKeys = dataKeys.filter(key => key !== 'league');
+                }
+
                 if ( dataKeys.length !== 0 ) {
                     console.warn(dataKeys);
                 }
+            }
+
+            function drawMatches(data) {
+                opponents = {};
+                data.forEach(m=>{
+                    opponent = "????";
+                    goalsForTeam = 0;
+                    goalsAgainstTeam = 0;
+                    outcome = -1;
+
+                    scoreParts = m.score.split("-");
+                    homeScore = parseInt(scoreParts[0]);
+                    awayScore = parseInt(scoreParts[1]);
+                    if ( m.home === team ) {
+                        opponent = m.away;
+                        goalsForTeam = homeScore;
+                        goalsAgainstTeam = awayScore;
+                    } else {
+                        opponent = m.home;
+                        goalsForTeam = awayScore;
+                        goalsAgainstTeam = homeScore;
+                    }
+
+                    if ( goalsForTeam > goalsAgainstTeam ) {
+                        outcome = "0";
+                    } else if ( goalsForTeam < goalsAgainstTeam ) {
+                        outcome = "1";
+                    } else if ( goalsForTeam === goalsAgainstTeam ) {
+                        outcome = "2";
+                    }
+
+                    if ( opponent === "????" || outcome === -1 ) {
+                        console.error(m);
+                    } else {
+                        if ( ! opponents[opponent] ) {
+                            opponents[opponent] = [
+                                0,0,0,0,0
+                            ]
+                        }
+                        opponents[opponent][outcome]++;
+                        opponents[opponent][4] += goalsForTeam;
+                        opponents[opponent][5] += goalsAgainstTeam;
+                    }
+                });
+
+                console.log(opponents);
             }
 
             function drawStandings(standingsData) {
