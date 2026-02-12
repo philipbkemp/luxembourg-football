@@ -144,8 +144,14 @@
                     tbody_tr = document.createElement("TR");
 
                     td_opp = document.createElement("TD");
-                    td_opp.textContent = key;
+                    td_opp.textContent = allTeams[key].name;
                     tbody_tr.append(td_opp);
+
+                    for ( i=0; i!==5 ; i++ ) {
+                        td_stat = document.createElement("TD");
+                        td_stat.textContent = opponents[key][i];
+                        tbody_tr.append(td_stat);
+                    }
 
                     tbody.append(tbody_tr);
                 });
