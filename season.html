@@ -262,9 +262,10 @@
 
                 td_outcome = document.createElement("TD");
                 if ( matchData.outcome ) {
-                    td_outcome.textContent = matchData.outcome
+                    td_outcome.innerHTML = matchData.outcome
                         .replace(matchData.home,allTeams[matchData.home].name)
                         .replace(matchData.away,allTeams[matchData.away].name)
+                        .replace("|","<br/>")
                         ;
                 } else {
                     td_outcome.textContent = "";
