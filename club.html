@@ -130,9 +130,7 @@
                     ["D","Draw"],
                     ["L","Lost"],
                     ["F","Goals For"],
-                    ["A","Goals Against"],
-                    ["Pts","Points"],
-                    ["GD","Goal Difference"]
+                    ["A","Goals Against"]
                 ];
                 stats.forEach(s=>{
                     th_stat = document.createElement("TH");
@@ -151,7 +149,16 @@
 
                     td_opp = document.createElement("TD");
                     td_opp.textContent = allTeams[key].name;
+                    td_opp.classList.add("league-name");
                     tbody_tr.append(td_opp);
+
+                    td_stat = document.createElement("TD");
+                    td_stat.textContent = (
+                        opponents[key][0]
+                        + opponents[key][1]
+                        + opponents[key][2]
+                    );
+                    tbody_tr.append(td_stat);
 
                     for ( i=0; i!==5 ; i++ ) {
                         td_stat = document.createElement("TD");
