@@ -15,7 +15,14 @@
             window.location.search.replace("?","").split("&").forEach(param=>{parts=param.split("=");params[parts[0]]=parts[1];});
             team = params.team;
             allTeams = [];
-            fetch("clubs/"+team.toLowerCase()+".json")
+            fetch("data/teams.json")
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    allTeams = data;
+                    return fetch("clubs/"+team.toLowerCase()+".json")
+                })
                 .then(response => {
                     if ( ! response.ok ) {
                         errorP = document.createElement("P");
@@ -39,7 +46,6 @@
                 document.getElementsByTagName("title")[0].textContent += " | " + data.name;
                 document.getElementsByTagName("h1")[0].innerHTML += " : " + data.name;
                 dataKeys = dataKeys.filter(key => key !== 'name');
-                allTeams[data.code] = {name:data.name};
                 dataKeys = dataKeys.filter(key => key !== 'code');
 
                 if ( data.league ) {
