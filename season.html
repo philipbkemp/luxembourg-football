@@ -198,7 +198,7 @@
                     dataKeys = dataKeys.filter(key => key !== 'league.series.serie');
                     dataKeys = dataKeys.filter(key => key !== 'league.level');
                     h2.id = "league_" + league.level + "_" + serie.serie;
-                    if ( series.serie !== 1 ) {
+                    if ( serie.serie !== 1 ) {
                         h2.classList.add("series-title");
                     }
                     document.body.append(h2);
