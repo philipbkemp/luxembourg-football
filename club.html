@@ -114,6 +114,13 @@
                         opponents[opponent][3] += goalsForTeam;
                         opponents[opponent][4] += goalsAgainstTeam;
                     }
+
+                    dataKeys = dataKeys.filter(key => key !== 'home');
+                    dataKeys = dataKeys.filter(key => key !== 'away');
+                    dataKeys = dataKeys.filter(key => key !== 'score');
+                    dataKeys = dataKeys.filter(key => key !== 'outcome');
+                    dataKeys = dataKeys.filter(key => key !== 'playoff');
+                    dataKeys = dataKeys.filter(key => key !== 'season');
                 });
 
                 console.log(opponents);
