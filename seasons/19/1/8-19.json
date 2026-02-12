@@ -87,7 +87,7 @@
         },
         "promotion_3": {
             "matches": [
-                {"home":"NSCH","away":"CMLB","score":"7-2","outcome":"NSCH promoted"}
+                {"home":"NSCH","away":"CMLB","score":"7-2","outcome":"NSCH promoted","season": "1918-19", "playoff": "promotion_3"}
             ]
         }
     }
