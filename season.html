@@ -158,13 +158,18 @@
                             matchTable = document.createElement("TABLE");
                             matchTabelBody = document.createElement("TBODY");
                             matchTableHasDates = false;
+                            matchTableHasNotes = false;
                             poData.matches.forEach(match=>{
-                                var [createdTr,rowHasDates] = drawMatch(match,"playoffs."+poName,true);
+                                var [createdTr,rowHasDates,rowHasNotes] = drawMatch(match,"playoffs."+poName,true);
                                 matchTabelBody.append(createdTr);
                                 matchTableHasDates = matchTableHasDates || rowHasDates;
+                                matchTableHasNotes = matchTableHasNotes || rowHasNotes;
                             });
                             if ( ! matchTableHasDates ) {
                                 matchTable.classList.add("matches-no-dates");
+                            }
+                            if ( ! matchTableHasNotes ) {
+                                matchTable.classList.add("matches-no-notes");
                             }
                             matchTable.append(matchTabelBody);
                             document.body.append(matchTable);
@@ -228,6 +233,7 @@
             function drawMatch(matchData,keyPrefix,highlightWinner=false) {
                 match_tr = document.createElement("TR");
                 hasDates = false;
+                hasNotes = false;
 
                 td_date = document.createElement("TD");
                 if ( matchData.date ) {
@@ -290,12 +296,14 @@
                         .replace(matchData.away,allTeams[matchData.away].name)
                         .replace("|","<br/>")
                         ;
+                    hasNotes = true;
                 } else if ( matchData.note ) {
                     dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.note'));
                     td_outcome.textContent = matchData.note
                         .replace(matchData.home,allTeams[matchData.home].name)
                         .replace(matchData.away,allTeams[matchData.away].name)
                         ;
+                    hasNotes = true;
                 } else {
                     td_outcome.textContent = "";
                 }
@@ -308,7 +316,7 @@
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.league'));
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.series'));
 
-                return [match_tr,hasDates];
+                return [match_tr,hasDates,hasNotes];
             }
 
             function drawStandings(standingsData,prefix="league") {

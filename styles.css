@@ -70,7 +70,8 @@ table tbody tr td.match-loser {
 table.matches-no-dates tr > :first-child {
     display: none;
 }
-table.standings-no-notes tr > :last-child {
+table.standings-no-notes tr > :last-child,
+table.matches-no-notes tr > :last-child {
     display: none;
 }
 h2 {
