@@ -477,6 +477,12 @@
                         matchGridNotes.push(
                             "* Match between " + allTeams[m.home].name + " and " + allTeams[m.away].name + " awarded as " + m.score + " forfeit"
                         );
+                    } else if ( m.note ) {
+                        dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.note'));
+                        matchGrid[m.home][m.away] = "<abbr title='"+m.note+"'>"+m.score+"</abbr>";
+                        matchGridNotes.push(
+                            "* Match between " + allTeams[m.home].name + " and " + allTeams[m.away].name + ": " + m.note
+                        );
                     }
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.home'));
                     dataKeys = dataKeys.filter(key => key !== (prefix+'.matches.away'));
