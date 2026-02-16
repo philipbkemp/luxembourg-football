@@ -67,12 +67,15 @@ table tbody tr td.match-score {
 table tbody tr td.match-loser {
     opacity: 0.6;
 }
-table.matches-no-dates tr > :first-child {
+table.matches-no-dates tr > :first-child:not(.bye-match) {
     display: none;
 }
-table.standings-no-notes tr > :last-child,
-table.matches-no-notes tr > :last-child {
+table.standings-no-notes tr > :last-child:not(.bye-match),
+table.matches-no-notes tr > :last-child:not(.bye-match) {
     display: none;
+}
+table tbody tr td.bye-match {
+    opacity: 1 !important;
 }
 h2 {
     border-top: 1px solid #999999;
