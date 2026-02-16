@@ -373,6 +373,8 @@
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.level'));
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.league'));
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.series'));
+                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.cup'));
+                dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.round'));
 
                 return [match_tr,hasDates,hasNotes];
             }
