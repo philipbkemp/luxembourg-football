@@ -215,6 +215,15 @@
                                     matchTabelBody.append(createdTr);
                                     matchTableHasDates = matchTableHasDates || rowHasDates;
                                     matchTableHasNotes = matchTableHasNotes || rowHasNotes;
+                                } else {
+                                    byeTr = document.createElement("TR");
+                                    byeTd = document.createElement("TD");
+                                    byeTd.setAttribute("colspan","10");
+                                    byeTd.textContent = "Bye: " + allTeams[cupMatch.bye] + " ("+cupMatch.byeDivision+")";
+                                    byeTr.append(byeTd);
+                                    matchTabelBody.append(byeTr);
+                                    dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.matches.bye'));
+                                    dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.matches.byeDivision'));
                                 }
                             });
                             if ( ! matchTableHasDates ) {
@@ -299,6 +308,7 @@
                 td_home = document.createElement("TD");
                 td_home.textContent = allTeams[matchData.home].name;
                 if ( matchData.homeDivision ) {
+                    dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.homeDivision'));
                     td_home.textContent = td_home.textContent + " ("+matchData.homeDivision+")";
                 }
                 td_home.classList.add("team-name");
@@ -324,6 +334,7 @@
                 td_away = document.createElement("TD");
                 td_away.textContent = allTeams[matchData.away].name;
                 if ( matchData.awayDivision ) {
+                    dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.awayDivision'));
                     td_away.textContent = td_away.textContent + " ("+matchData.awayDivision+")";
                 }
                 td_away.classList.add("team-name");
