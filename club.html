@@ -121,6 +121,14 @@
                     dataKeys = dataKeys.filter(key => key !== 'matches.outcome');
                     dataKeys = dataKeys.filter(key => key !== 'matches.playoff');
                     dataKeys = dataKeys.filter(key => key !== 'matches.season');
+
+                    
+                    dataKeys = dataKeys.filter(key => key !== 'matches.date');
+                    dataKeys = dataKeys.filter(key => key !== 'matches.cup');
+                    dataKeys = dataKeys.filter(key => key !== 'matches.round');
+                    dataKeys = dataKeys.filter(key => key !== 'matches.homeDivision');
+                    dataKeys = dataKeys.filter(key => key !== 'matches.awayDivision');
+                    dataKeys = dataKeys.filter(key => key !== 'matches.season');
                 });
 
                 table = document.createElement("TABLE");                
