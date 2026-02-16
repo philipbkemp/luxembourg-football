@@ -219,6 +219,7 @@
                                     byeTr = document.createElement("TR");
                                     byeTd = document.createElement("TD");
                                     byeTd.setAttribute("colspan","10");
+                                    byeTd.classList.add("bye-match");
                                     byeTd.textContent = "Bye: " + allTeams[cupMatch.bye] + " ("+cupMatch.byeDivision+")";
                                     byeTr.append(byeTd);
                                     matchTableBody.append(byeTr);
