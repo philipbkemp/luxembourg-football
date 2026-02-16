@@ -204,6 +204,7 @@
                             h3.textContent = cupRound.name;
                             document.body.append(h3);
                             dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.name'));
+                            console.log(cupRound);
                             cupRound.matches.forEach(cupMatch=>{
                                 if ( ! cupMatch.bye ) {
                                     drawMatch(cupMatch,('cup.'+cup+'.rounds',true));
