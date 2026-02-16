@@ -196,13 +196,17 @@
                         h2 = document.createElement("H2");
                         h2.textContent = data.cup[cup].name;
                         dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.name'));
-                        h2.id = "league_" + cup;
+                        h2.id = "cup_" + cup;
                         document.body.append(h2);
+                        dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds'));
                         data.cup[cup].rounds.forEach(cupRound=>{
                             h3 = document.createElement("H3");
                             h3.textContent = cupRound.name;
                             document.body.append(h3);
-                        dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.name'));
+                            dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.name'));
+                            cupRound.matches.forEach(cupMatch=>{
+                                drawMatch(cupMatch,('cup.'+cup+'.rounds',true));
+                            });
                         });
                     });
                 }
