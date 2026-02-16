@@ -205,7 +205,9 @@
                             document.body.append(h3);
                             dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.name'));
                             cupRound.matches.forEach(cupMatch=>{
-                                drawMatch(cupMatch,('cup.'+cup+'.rounds',true));
+                                if ( ! cupMatch.bye ) {
+                                    drawMatch(cupMatch,('cup.'+cup+'.rounds',true));
+                                }
                             });
                         });
                     });
