@@ -298,6 +298,9 @@
 
                 td_home = document.createElement("TD");
                 td_home.textContent = allTeams[matchData.home].name;
+                if ( matchData.homeDivision ) {
+                    td_home.textContent = td_home.textContent + " ("+matchData.homeDivision+")";
+                }
                 td_home.classList.add("team-name");
                 td_home.classList.add("match-home");
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.home'));
@@ -320,6 +323,9 @@
 
                 td_away = document.createElement("TD");
                 td_away.textContent = allTeams[matchData.away].name;
+                if ( matchData.awayDivision ) {
+                    td_away.textContent = td_away.textContent + " ("+matchData.awayDivision+")";
+                }
                 td_away.classList.add("team-name");
                 td_away.classList.add("match-away");
                 dataKeys = dataKeys.filter(key => key !== (keyPrefix+'.matches.away'));
