@@ -192,11 +192,18 @@
                 if ( data.cup ) {
                     dataKeys = dataKeys.filter(key => key !== 'cup');
                     Object.keys(data.cup).forEach(cup=>{
+                        dataKeys = dataKeys.filter(key => key !== ('cup.'+cup));
                         h2 = document.createElement("H2");
-                        dataKeys = dataKeys.filter(key => key !== 'cup.name');
                         h2.textContent = data.cup[cup].name;
+                        dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.name'));
                         h2.id = "league_" + cup;
                         document.body.append(h2);
+                        data.cup[cup].rounds.forEach(cupRound=>{
+                            h3 = document.createElement("H3");
+                            h3.textContent = cupRound.name;
+                            document.body.append(h3);
+                        dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.name'));
+                        });
                     });
                 }
 
