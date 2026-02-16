@@ -204,28 +204,26 @@
                             h3.textContent = cupRound.name;
                             document.body.append(h3);
                             dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.name'));
+                            matchTable = document.createElement("TABLE");
+                            matchTabelBody = document.createElement("TBODY");
+                            matchTableHasDates = false;
+                            matchTableHasNotes = false;
                             cupRound.matches.forEach(cupMatch=>{
                                 if ( ! cupMatch.bye ) {
-                                    matchTable = document.createElement("TABLE");
-                                    matchTabelBody = document.createElement("TBODY");
-                                    matchTableHasDates = false;
-                                    matchTableHasNotes = false;
-                                    poData.matches.forEach(match=>{
-                                        var [createdTr,rowHasDates,rowHasNotes] = drawMatch(cupMatch,('cup.'+cup+'.rounds',true));
-                                        matchTabelBody.append(createdTr);
-                                        matchTableHasDates = matchTableHasDates || rowHasDates;
-                                        matchTableHasNotes = matchTableHasNotes || rowHasNotes;
-                                    });
-                                    if ( ! matchTableHasDates ) {
-                                        matchTable.classList.add("matches-no-dates");
-                                    }
-                                    if ( ! matchTableHasNotes ) {
-                                        matchTable.classList.add("matches-no-notes");
-                                    }
-                                    matchTable.append(matchTabelBody);
-                                    document.body.append(matchTable);                                    
+                                    var [createdTr,rowHasDates,rowHasNotes] = drawMatch(cupMatch,('cup.'+cup+'.rounds',true));
+                                    matchTabelBody.append(createdTr);
+                                    matchTableHasDates = matchTableHasDates || rowHasDates;
+                                    matchTableHasNotes = matchTableHasNotes || rowHasNotes;
                                 }
                             });
+                            if ( ! matchTableHasDates ) {
+                                matchTable.classList.add("matches-no-dates");
+                            }
+                            if ( ! matchTableHasNotes ) {
+                                matchTable.classList.add("matches-no-notes");
+                            }
+                            matchTable.append(matchTabelBody);
+                            document.body.append(matchTable);=
                         });
                     });
                 }
