@@ -156,12 +156,12 @@
                         if ( poData.matches ) {
                             dataKeys = dataKeys.filter(key => key !== ('playoffs.'+poName+'.matches'));
                             matchTable = document.createElement("TABLE");
-                            matchTabelBody = document.createElement("TBODY");
+                            matchTableBody = document.createElement("TBODY");
                             matchTableHasDates = false;
                             matchTableHasNotes = false;
                             poData.matches.forEach(match=>{
                                 var [createdTr,rowHasDates,rowHasNotes] = drawMatch(match,"playoffs."+poName,true);
-                                matchTabelBody.append(createdTr);
+                                matchTableBody.append(createdTr);
                                 matchTableHasDates = matchTableHasDates || rowHasDates;
                                 matchTableHasNotes = matchTableHasNotes || rowHasNotes;
                             });
@@ -171,7 +171,7 @@
                             if ( ! matchTableHasNotes ) {
                                 matchTable.classList.add("matches-no-notes");
                             }
-                            matchTable.append(matchTabelBody);
+                            matchTable.append(matchTableBody);
                             document.body.append(matchTable);
                         }
 
@@ -205,14 +205,14 @@
                             document.body.append(h3);
                             dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.name'));
                             matchTable = document.createElement("TABLE");
-                            matchTabelBody = document.createElement("TBODY");
+                            matchTableBody = document.createElement("TBODY");
                             matchTableHasDates = false;
                             matchTableHasNotes = false;
                             dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.matches'));
                             cupRound.matches.forEach(cupMatch=>{
                                 if ( ! cupMatch.bye ) {
                                     var [createdTr,rowHasDates,rowHasNotes] = drawMatch(cupMatch,('cup.'+cup+'.rounds'),true);
-                                    matchTabelBody.append(createdTr);
+                                    matchTableBody.append(createdTr);
                                     matchTableHasDates = matchTableHasDates || rowHasDates;
                                     matchTableHasNotes = matchTableHasNotes || rowHasNotes;
                                 } else {
@@ -221,7 +221,7 @@
                                     byeTd.setAttribute("colspan","10");
                                     byeTd.textContent = "Bye: " + allTeams[cupMatch.bye] + " ("+cupMatch.byeDivision+")";
                                     byeTr.append(byeTd);
-                                    matchTabelBody.append(byeTr);
+                                    matchTableBody.append(byeTr);
                                     dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.matches.bye'));
                                     dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.matches.byeDivision'));
                                 }
@@ -232,7 +232,7 @@
                             if ( ! matchTableHasNotes ) {
                                 matchTable.classList.add("matches-no-notes");
                             }
-                            matchTable.append(matchTabelBody);
+                            matchTable.append(matchTableBody);
                             document.body.append(matchTable);
                         });
                     });
