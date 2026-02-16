@@ -9,6 +9,9 @@
         {"place": 4, "team": "BLVL", "w":  1, "d": 0, "l":  5, "f": 15, "a": 23, "pts_win": 2, "season": "1916-17", "level": 3, "series": 2, "league": "3. Division Series Esch", "removed":true,"note":"Did not compete next season"}
     ],
     "matches": [
-        {"home":"BLVL","away":"STET","score":"2-1","season":"1919-20","playoff":"title_3_S","outcome":"BLVL declared Series South winners and promoted|STET qualified for 3. Division Promotion playoffs"}
+        {"home":"BLVL","away":"STET","score":"2-1","season":"1919-20","playoff":"title_3_S","outcome":"BLVL declared Series South winners and promoted|STET qualified for 3. Division Promotion playoffs"},
+        {"date":"1921-09-04","season": "1921-22","cup":"cup_luxembourg","name":"Luxembourg Cup","round":"1st Round","home": "BLVL", "homeDivision": 3,"away": "CSHL", "awayDivision": 3,"score":"3-0"},
+        {"date":"1921-10-02","season": "1921-22","cup":"cup_luxembourg","name":"Luxembourg Cup","round":"2nd Round","home": "MARM", "homeDivision": 4,"away": "BLVL", "awayDivision": 3,"score":"1-4"},
+        {"date":"1921-11-06","season": "1921-22","cup":"cup_luxembourg","name":"Luxembourg Cup","round":"3rd Round","home": "JESH", "homeDivision": 1,"away": "BLVL", "awayDivision": 3,"score":"6-0"}
     ]
 }
