@@ -210,7 +210,7 @@
                             matchTableHasNotes = false;
                             cupRound.matches.forEach(cupMatch=>{
                                 if ( ! cupMatch.bye ) {
-                                    var [createdTr,rowHasDates,rowHasNotes] = drawMatch(cupMatch,('cup.'+cup+'.rounds',true));
+                                    var [createdTr,rowHasDates,rowHasNotes] = drawMatch(cupMatch,('cup.'+cup+'.rounds'),true);
                                     matchTabelBody.append(createdTr);
                                     matchTableHasDates = matchTableHasDates || rowHasDates;
                                     matchTableHasNotes = matchTableHasNotes || rowHasNotes;
