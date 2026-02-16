@@ -152,7 +152,7 @@
             ]
         }]
     }],
-    "cup": [{
+    "cup": {
         "luxembourg": {
             "name": "Luxembourg Cup",
             "rounds": [{
@@ -217,5 +217,5 @@
                 ]
             }]
         }
-    }]
+    }
 }
