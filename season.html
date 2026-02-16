@@ -208,6 +208,7 @@
                             matchTabelBody = document.createElement("TBODY");
                             matchTableHasDates = false;
                             matchTableHasNotes = false;
+                            dataKeys = dataKeys.filter(key => key !== ('cup.'+cup+'.rounds.matches'));
                             cupRound.matches.forEach(cupMatch=>{
                                 if ( ! cupMatch.bye ) {
                                     var [createdTr,rowHasDates,rowHasNotes] = drawMatch(cupMatch,('cup.'+cup+'.rounds'),true);
