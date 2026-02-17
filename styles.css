@@ -103,3 +103,6 @@ h2:first-of-type {
 h2.series-title {
     border-top: none;
 }
+.hasNav h2 {
+    scroll-margin-top: 110px;
+}
