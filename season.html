@@ -11,8 +11,8 @@
                 <a href="index.html">Luxembourgish Football</a>:
                 <a href="seasons.html">Seasons</a>
             </h1>
+            <div id="nav"></div>
         </div>
-        <div id="nav"></div>
         <script>
             params=[];
             window.location.search.replace("?","").split("&").forEach(param=>{parts=param.split("=");params[parts[0]]=parts[1];});
@@ -75,7 +75,7 @@
                     dataKeys = dataKeys.filter(key => key !== 'prev');
                     aPrev = document.createElement("A");
                     aPrev.setAttribute("href","season.html?year="+data.prev);
-                    aPrev.textContent = data.prev;
+                    aPrev.textContent = "< " + data.prev;
                     if ( navbar.textContent !== "" ) {
                         navbar.append(" | ");
                     }
@@ -85,7 +85,7 @@
                     dataKeys = dataKeys.filter(key => key !== 'next');
                     aNext = document.createElement("A");
                     aNext.setAttribute("href","season.html?year="+data.next);
-                    aNext.textContent = data.next;
+                    aNext.textContent = data.next + " >";
                     if ( navbar.textContent !== "" ) {
                         navbar.append(" | ");
                     }
