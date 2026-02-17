@@ -19,6 +19,7 @@
             season = params.year;
             seasonPath = [season[0]+""+season[1],season[2],season[3]+"-"+season.split("-")[1]];
             dataKeys = [];
+            navbar = document.getElementById("nav");
 
             allTeams = null;
             fetch("data/teams.json")
@@ -70,7 +71,6 @@
                     document.body.append(globalNote);
                 }
 
-                navbar = document.getElementById("nav");
                 if ( data.prev ) {
                     dataKeys = dataKeys.filter(key => key !== 'prev');
                     aPrev = document.createElement("A");
@@ -102,6 +102,16 @@
                             dataKeys = dataKeys.filter(key => key !== 'league.level');
                             h2.id = "league_" + league.level;
                             document.body.append(h2);
+
+                            
+                            aLeague = document.createElement("A");
+                            aLeague.setAttribute("href","#"+h2.id);
+                            aLeague.textContent = h2.textContent;
+                            if ( navbar.textContent !== "" ) {
+                                navbar.append(" | ");
+                            }
+                            navbar.append(aLeague);
+
                         } else {
                             dataKeys = dataKeys.filter(key => key !== 'league.series');
                             drawSeries(league);
