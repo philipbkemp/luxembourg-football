@@ -102,7 +102,6 @@
                             dataKeys = dataKeys.filter(key => key !== 'league.level');
                             h2.id = "league_" + league.level;
                             document.body.append(h2);
-
                             
                             aLeague = document.createElement("A");
                             aLeague.setAttribute("href","#"+h2.id);
@@ -114,6 +113,14 @@
 
                         } else {
                             dataKeys = dataKeys.filter(key => key !== 'league.series');
+
+                            spanLeague = document.createElement("SPAN");
+                            spanLeague.textContent = league.name;
+                            if ( navbar.textContent !== "" ) {
+                                navbar.append(" | ");
+                            }
+                            navbar.append(spanLeague);
+
                             drawSeries(league);
                         }
 
@@ -269,6 +276,11 @@
                         h2.classList.add("series-title");
                     }
                     document.body.append(h2);
+
+                    aSeries = document.createElement("A");
+                    aSeries.setAttribute("href","#"+h2.id);
+                    aSeries.textContent = serie.name;
+                    navbar.append(aSeries);
 
                     if ( serie.pts_win ) {
                         dataKeys = dataKeys.filter(key => key !== 'league.series.pts_win');
