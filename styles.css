@@ -106,3 +106,6 @@ h2.series-title {
 .hasNav h2 {
     scroll-margin-top: 110px;
 }
+.series-nav-link {
+    margin-left: 1em;
+}

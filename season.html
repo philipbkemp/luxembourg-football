@@ -279,7 +279,8 @@
 
                     aSeries = document.createElement("A");
                     aSeries.setAttribute("href","#"+h2.id);
-                    aSeries.textContent = " " + serie.name;
+                    aSeries.classList.add("series-nav-link");
+                    aSeries.textContent = serie.name;
                     navbar.append(aSeries);
 
                     if ( serie.pts_win ) {
